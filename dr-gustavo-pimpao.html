@@ -1,55 +1,17 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Preview LP - Dr. Gustavo Pimpao</title>
-  <meta name="description" content="Preview da landing page do Dr. Gustavo Pimpao para campanha de Google Ads.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{--ink:#21313a;--muted:#65717a;--paper:#f6f3ee;--white:#fff;--teal:#254d55;--dark:#17323a;--line:rgba(33,49,58,.15);--sand:#e8ddcf;--green:#1f7a4d;--radius:8px;--container:min(1120px,calc(100% - 40px))}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Manrope,system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.55}a{color:inherit;text-decoration:none}
-    .topbar{position:absolute;z-index:5;inset:0 0 auto;width:var(--container);margin:0 auto;padding:22px 0;display:flex;align-items:center;justify-content:space-between;gap:20px;color:var(--white)}
-    .brand{display:flex;align-items:center;gap:12px}.mark{display:grid;place-items:center;width:42px;height:42px;border:1px solid rgba(255,255,255,.45);border-radius:50%;font-weight:800;font-size:13px}.brand strong,.brand small{display:block}.brand strong{font-size:14px;line-height:1.1}.brand small{color:rgba(255,255,255,.72);font-size:11px}
-    nav{display:flex;gap:24px;color:rgba(255,255,255,.86);font-size:14px;font-weight:700}.button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 20px;border-radius:var(--radius);font-size:14px;font-weight:800;white-space:nowrap}.light{color:var(--dark);background:var(--sand)}.primary{color:var(--white);background:var(--green);box-shadow:0 18px 38px rgba(31,122,77,.24)}.ghost{color:var(--white);border:1px solid rgba(255,255,255,.34);background:rgba(255,255,255,.08)}
-    .hero{position:relative;min-height:88vh;display:grid;align-items:end;overflow:hidden;color:var(--white);background:radial-gradient(circle at 76% 32%,rgba(232,221,207,.26),transparent 30%),linear-gradient(100deg,rgba(23,50,58,.99) 0%,rgba(23,50,58,.92) 48%,rgba(23,50,58,.68) 100%)}.hero:after{content:"";position:absolute;inset:auto 0 0;height:120px;background:linear-gradient(0deg,var(--paper),rgba(246,243,238,0))}
-    .visual{position:absolute;right:7vw;bottom:120px;width:min(390px,32vw);aspect-ratio:1;border:1px solid rgba(255,255,255,.2);border-radius:50%;background:linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,.04));display:grid;place-items:center;color:rgba(255,255,255,.68);font-weight:800;text-align:center;padding:40px}.visual:before{content:"";position:absolute;width:54%;height:54%;border:18px solid rgba(232,221,207,.28);border-radius:50%}
-    .hero-content{position:relative;z-index:2;width:var(--container);margin:0 auto;padding:150px 0 82px;max-width:760px;justify-self:start}.kicker{margin:0 0 14px;color:#b8cfc8;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}h1,h2,h3,p{margin-top:0}h1{max-width:720px;margin-bottom:20px;font-size:clamp(40px,6vw,68px);line-height:.98}h2{margin-bottom:14px;font-size:clamp(28px,4vw,44px);line-height:1.08}h3{margin-bottom:10px;font-size:20px;line-height:1.2}.hero p:not(.kicker){max-width:640px;color:rgba(255,255,255,.86);font-size:19px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin:30px 0 28px}.proof{display:flex;flex-wrap:wrap;gap:10px}.proof span{padding:9px 12px;border:1px solid rgba(255,255,255,.22);border-radius:var(--radius);color:rgba(255,255,255,.82);background:rgba(255,255,255,.08);font-size:13px;font-weight:700}
-    .section{width:var(--container);margin:0 auto;padding:86px 0}.head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.7fr);gap:52px;align-items:end;margin-bottom:34px}.head p:last-child,.card p,.authority p,details p,.final p{color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{min-height:210px;padding:26px;border:1px solid var(--line);border-radius:var(--radius);background:var(--white)}
-    .muted{width:100%;padding-inline:max(20px,calc((100% - 1120px)/2));background:#e9eee9}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.step{padding:22px;border-radius:var(--radius);background:var(--white)}.step span{display:block;margin-bottom:20px;color:var(--teal);font-size:13px;font-weight:800}.authority{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.box{padding:30px;border:1px solid var(--line);border-radius:var(--radius);background:var(--white)}.box ul{margin:16px 0 0;padding-left:18px;color:var(--muted)}details{border-top:1px solid var(--line);padding:22px 0}details:last-child{border-bottom:1px solid var(--line)}summary{cursor:pointer;font-weight:800;font-size:18px}.final{margin-top:40px;padding:76px 20px;text-align:center;color:var(--white);background:var(--dark)}.final h2,.final p{max-width:680px;margin-left:auto;margin-right:auto}
-    @media(max-width:860px){nav{display:none}.visual{display:none}.hero{min-height:auto}.hero-content{padding:132px 0 72px}h1{font-size:42px}.section,.muted{padding-top:64px;padding-bottom:64px}.head,.authority{grid-template-columns:1fr;gap:22px}.cards,.steps{grid-template-columns:1fr}.card{min-height:0}}@media(max-width:520px){:root{--container:min(100% - 28px,1120px)}.brand small{display:none}h1{font-size:36px}.hero p:not(.kicker){font-size:17px}.actions .button{width:100%}}
-  </style>
-</head>
-<body>
-  <header class="topbar">
-    <a class="brand" href="#inicio"><span class="mark">GP</span><span><strong>Dr. Gustavo Pimpao</strong><small>CRM 22173 | RQE 18534</small></span></a>
-    <nav><a href="#quando">Quando procurar</a><a href="#consulta">Consulta</a><a href="#duvidas">Duvidas</a></nav>
-    <a class="button light" href="https://wa.me/5561991236212?text=Ola%2C%20gostaria%20de%20agendar%20uma%20avaliacao%20com%20o%20Dr.%20Gustavo%20Pimpao." target="_blank" rel="noreferrer">Agendar</a>
-  </header>
-  <main id="inicio">
-    <section class="hero">
-      <div class="visual">Ortopedia<br>Joelho<br>Esporte</div>
-      <div class="hero-content">
-        <p class="kicker">Ortopedista, traumatologista e medicina esportiva em Brasilia</p>
-        <h1>Avaliacao para dor no joelho, lesoes e limitacoes de movimento</h1>
-        <p>Consulta com o Dr. Gustavo Lima Almeida Pimpao, especialista em cirurgia do joelho e ortopedia geral, para orientar o proximo passo com clareza.</p>
-        <div class="actions">
-          <a class="button primary" href="https://wa.me/5561991236212?text=Ola%2C%20gostaria%20de%20agendar%20uma%20avaliacao%20com%20o%20Dr.%20Gustavo%20Pimpao." target="_blank" rel="noreferrer">Agendar pelo WhatsApp</a>
-          <a class="button ghost" href="#quando">Ver quando procurar</a>
-        </div>
-        <div class="proof"><span>CRM 22173 | RQE 18534</span><span>Atende convenios selecionados</span><span>WhatsApp: (61) 99123-6212</span></div>
-      </div>
-    </section>
-    <section id="quando" class="section">
-      <div class="head"><div><p class="kicker">Quando procurar</p><h2>Procure avaliacao quando a dor comeca a limitar sua rotina.</h2></div><p>Dores que persistem, pioram com movimento ou atrapalham esporte, trabalho e caminhada merecem uma avaliacao direcionada.</p></div>
-      <div class="cards"><article class="card"><h3>Joelho e esporte</h3><p>Avaliacao de dor no joelho, lesoes esportivas, desgaste, instabilidade e retorno seguro as atividades.</p></article><article class="card"><h3>Ortopedia geral</h3><p>Atendimento para dores, traumas e limitacoes em ossos, articulacoes, ligamentos, tendoes e musculos.</p></article><article class="card"><h3>Procedimentos no consultorio</h3><p>Infiltracoes, ondas de choque, ultrassom e reabilitacao podem ser indicados conforme avaliacao.</p></article></div>
-    </section>
-    <section id="consulta" class="section muted"><div class="head"><div><p class="kicker">Como funciona</p><h2>Uma consulta direta para decidir o proximo passo.</h2></div></div><div class="steps"><div class="step"><span>01</span><strong>Escuta da queixa e historico</strong></div><div class="step"><span>02</span><strong>Exame fisico direcionado</strong></div><div class="step"><span>03</span><strong>Analise dos exames disponiveis</strong></div><div class="step"><span>04</span><strong>Conduta explicada com clareza</strong></div></div></section>
-    <section class="section authority"><div><p class="kicker">Sobre o medico</p><h2>Dr. Gustavo Lima Almeida Pimpao</h2><p>Ortopedista e traumatologista, com atuacao em cirurgia do joelho, ortopedia geral, medicina esportiva e terapia por ondas de choque.</p></div><div class="box"><strong>Informacoes de atendimento</strong><ul><li>CRM 22173 | RQE 18534</li><li>Segunda a sexta, das 08h as 18h</li><li>QNL 30, Conjunto A, Lotes 2, 4 e 6, Taguatinga Norte</li><li>Em frente ao Shopping JK</li></ul></div></section>
-    <section id="duvidas" class="section"><p class="kicker">Duvidas frequentes</p><h2>Antes de agendar</h2><details><summary>Preciso levar exames?</summary><p>Se tiver radiografias, ressonancia, ultrassom ou exames anteriores, leve para ajudar na avaliacao.</p></details><details><summary>O atendimento e por convenio?</summary><p>Sim, ha atendimento por convenios selecionados. Confirme a cobertura com a equipe antes de agendar.</p></details><details><summary>Toda dor ortopedica precisa de cirurgia?</summary><p>Nao. A conduta depende do diagnostico, da limitacao e da evolucao de cada caso.</p></details></section>
-    <section class="final"><h2>Quer avaliar sua queixa com um ortopedista?</h2><p>Fale com a equipe para confirmar agenda, local e forma de atendimento.</p><a class="button primary" href="https://wa.me/5561991236212?text=Ola%2C%20gostaria%20de%20agendar%20uma%20avaliacao%20com%20o%20Dr.%20Gustavo%20Pimpao." target="_blank" rel="noreferrer">Chamar no WhatsApp</a></section>
-  </main>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dr. Gustavo Pimpao | Ortopedista de Joelho em Brasilia</title>
+    <meta name="description" content="Agende avaliacao com o Dr. Gustavo Pimpao, ortopedista e traumatologista com atuacao em joelho, medicina esportiva e ortopedia geral." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <script type="module" crossorigin src="./assets/index-W87XI1rR.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-sfxppSMG.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
