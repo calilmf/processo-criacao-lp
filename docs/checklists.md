@@ -26,6 +26,9 @@ Checklists tornam a revisao repetivel. Eles nao substituem julgamento, mas imped
 - Referencias do repertorio foram citadas por ID no mapa visual.
 - Layout simples foi escolha estrategica, nao preenchimento automatico.
 - Imagens e icones possuem funcao.
+- Cada icone de card tem linha correspondente no `mapa-icones.md`, com bucket (A/B/C) e justificativa.
+- Nenhum icone de bucket C foi usado sem descartar antes um bucket A (match literal) ou B (composto).
+- O verificador automatico de icones (duplicidade na pagina inteira + checagem de dominio clinico) rodou sem apontamentos nao resolvidos.
 - Hierarquia, contraste e leitura estao claros.
 - Mobile foi revisado sem textos estourando ou controles inacessiveis.
 - A pagina nao e apenas uma mudanca de cor de outro projeto.

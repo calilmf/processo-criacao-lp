@@ -12,6 +12,9 @@ visual-repertorio/
   03-cartoes-referencia/        analise pronta para uso
   04-padroes-por-secao/         hero, prova, mecanismo, FAQ, CTA etc.
   05-componentes/               cards, formularios, icones e microinteracoes
+                                 (para a escolha semantica de icone por card, use
+                                 `docs/repertorio-icones.md` — este repertorio cobre
+                                 apenas icones como elemento de composicao visual)
   06-lookbooks/                 combinacoes por segmento ou tom
   07-receitas-combinatorias/    combinacoes para casos frequentes
   09-indices/                   entrada por secao, tom e especialidade
