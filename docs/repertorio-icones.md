@@ -1,48 +1,63 @@
-# Repertorio de Icones
+# Repertório de Ícones
 
-Icone de card e uma decisao de precisao clinica, nao apenas uma decisao estetica. O modo de falha aqui e diferente do repertorio visual: um icone errado nao deixa a pagina "feia", ele comunica o dominio clinico errado (ex: um icone de pulso cardiaco numa pagina de ortopedia) ou nenhum dominio (ex: um cadeado generico de seguranca num card de sintoma medico). Por isso a escolha de icones tem um processo proprio, separado do repertorio visual geral.
+Escolher ícone de card é uma decisão **visual**. Este documento existe porque tratá-la como decisão textual já produziu, numa LP de ortopedia real, um ícone de pulso cardíaco num card de coluna, um ícone de joelho num card de coluna, e um cadeado de segurança num card de sintoma.
 
-## A regra dura
+## A regra
 
-Um icone so pode ser escolhido pelo que seu nome/dominio realmente significa, nunca pela forma que evoca. "Parece um alerta", "parece travado", "parece uma onda" nao sao motivo valido de escolha quando essa forma vem de um icone de dominio clinico diferente do card, ou de um icone sem nenhum dominio clinico (cadeado, engrenagem, seta).
+**Nenhum ícone é aprovado sem ter sido renderizado e olhado, no tamanho real de uso.**
 
-Teste pratico: leia o nome oficial do icone em voz alta, sem olhar a imagem. Se o nome nao descreve o conceito do card, o icone esta errado — nao importa o quanto a forma pareca combinar.
+Escolher pelo nome não funciona, e não é questão de procurar melhor. Dois casos reais, ambos invisíveis numa lista de texto:
 
-## Metodo de selecao, por card
+- `healthicons:joints-outline` se chama "joints" e **desenha um joelho**. Foi parar em "Articulações da coluna".
+- Buscar `cervical` retorna **colo do útero** e **gravata**. Em inglês médico, "cervical" não é pescoço.
 
-Para cada card `(titulo, descricao)`, antes de tocar em qualquer buscador de icones:
+Nenhuma revisão de nomes, por mais caprichada, pega isso.
 
-### 1. Extrair o conceito clinico literal
+## Método, por card
 
-Escreva uma frase curta do que o card realmente significa clinicamente, e o dominio dele. Exemplo: "Crises recorrentes" numa pagina de coluna nao e "um alerta generico" — e "piora recorrente de dor na coluna", dominio = coluna/ortopedia.
+### 1. Descrever o que o card significa
 
-### 2. Buscar nesta ordem fixa, sem pular etapa
+Uma frase curta, antes de buscar. "Crises recorrentes" numa página de coluna = *piora recorrente de dor na coluna*, não "algo que pareça um alerta".
 
-1. **`healthicons`** primeiro, sempre. E o unico set do Iconify feito para conceitos clinicos e de saude global de forma literal (spine, back-pain, joints, nerve, foot, orthopaedics, orthotics, sling, cast, cane, crutches, traumatism, walk-supported, skeleton, pain, stethoscope, syringe, xray, weights, walking, physical-therapy, occupational-therapy).
-2. **`material-symbols`** segundo, apenas para substantivos anatomicos especificos que faltam no healthicons (ossos e articulacoes por nome: femur, wrist, ulna-radius, foot-bones, hand-bones, front-hand). Nunca usar este set para conceitos abstratos/emocionais (alerta, urgencia, humor) so porque ele tambem tem esses icones — foi exatamente assim que um icone de pulso cardiaco (`pulse-alert-outline`) foi escolhido por engano para um card de coluna.
-3. **`hugeicons`** terceiro, so como ultimo recurso de forma literal (hoje usado apenas para `shoulder`).
-4. Qualquer outro set do Iconify: so com busca explicita, documentada no mapa de icones (nunca escolha silenciosa).
+### 2. Colher vários candidatos, de toda a base
 
-### 3. Classificar em um dos 3 buckets
+`ferramentas/harvest-candidatos.py` busca em **toda a Iconify (215 sets, ~308 mil ícones)** a partir de uma lista de termos por card, filtra sets multicoloridos/emoji/marca, e baixa ~10 candidatos por card.
 
-Somente o bucket A pode ser usado sem sinalizacao no mapa de icones. B e C sempre precisam de justificativa escrita.
+Use vários termos por card, incluindo o termo clínico e o termo leigo. Limitar a busca a poucos sets conhecidos foi justamente o que escondeu, numa LP de ortopedia, que existiam `game-icons:knee-cap`, `streamline-ultimate:medical-specialty-knee-1` e `hugeicons:back-muscle-body`.
 
-- **Bucket A — Match literal.** O nome oficial do icone descreve exatamente o conceito do card, no mesmo dominio clinico. Passa no teste da regra dura.
-- **Bucket B — Composto literal.** Nenhum icone sozinho serve, mas dois icones literais do mesmo dominio, combinados, comunicam o conceito (ex: `healthicons:spine-outline` + um simbolo de alerta, para "crise recorrente de coluna" — os dois elementos sao literais e do mesmo dominio, nenhum e emprestado de um dominio errado). Como a maioria dos sites de LP renderiza um unico `<img>` por card, um icone composto vira **um SVG customizado unico**, desenhado combinando os dois elementos graficos — nao duas tags de imagem sobrepostas via CSS. Este e o padrao preferido quando nao existe icone literal (ver regra abaixo).
-- **Bucket C — Fallback generico documentado.** So depois de confirmar, por busca real, que nao existe icone literal nem combinacao possivel (ex: termos como "meniscus", "ganglion cyst", "trigger finger", "bursitis", "ligament", "crepitus", "carpal tunnel", "frozen shoulder", "ankle sprain" nao existem em nenhum set do Iconify hoje). Mesmo assim, o fallback tem que ficar no mesmo dominio/regiao do card — nunca emprestar de uma especialidade errada — e ser escrito no mapa de icones com a razao. Bucket C deve ser raro: na duvida, prefira compor (bucket B) a aceitar um fallback solto.
+### 3. Renderizar e olhar
 
-### 4. Checar contra os icones ja usados na mesma pagina
+`ferramentas/contact-sheet.py` monta um grid com cada candidato a **32px (tamanho real) e 96px**, ao lado do título do card.
 
-Nao repetir o mesmo icone em cards diferentes da mesma pagina — nem dentro da mesma secao (sintomas/causas/cuidados), nem entre secoes diferentes da mesma pagina. Um verificador automatico deve rodar isso antes do build (ver `docs/checklists.md`).
+Critério, por ícone: *olhando só o desenho, sem ler o título, dá pra dizer que parte do corpo/órgão é e qual é o problema?*
 
-## Quando nao existe icone literal em lugar nenhum
+O 32px é o que decide. Ícone que só funciona grande não serve.
 
-Confirmado por busca real no Iconify (nao suposicao): conceitos ortopedicos especificos como menisco, cisto, dedo em gatilho, bursite, ligamento, crepitacao, tunel do carpo, ombro congelado e entorse de tornozelo nao tem icone literal proprio em nenhum set indexado. Nestes casos o padrao e **compor dois icones literais do mesmo dominio** (bucket B) — por exemplo, o icone da regiao do corpo (joelho/ombro/coluna) combinado com um simbolo generico mas clinicamente neutro (alerta, gesso, orteses) — em vez de aceitar um icone de forma parecida vindo de outro dominio.
+### 4. Escolher, e checar a página inteira
 
-## Biblioteca por especialidade
+Sem repetir o mesmo ícone em dois cards da mesma página — nem dentro de uma seção, nem entre seções.
 
-Cada especialidade medica atendida pelas LPs deve ter uma lista curada de icones ja validados como bucket A, para quem for construir a proxima LP daquela especialidade nao precisar redescobrir do zero. Ver `especialidades/ortopedia/icones-base.md` como primeiro exemplo. Quando uma nova especialidade aparecer, criar `especialidades/<especialidade>/icones-base.md` do mesmo jeito — nunca forcar a lista de uma especialidade a absorver icones de outro dominio.
+Quando o conceito não tem ícone literal em lugar nenhum — confirmado por busca, não por suposição — use o ícone anatômico mais próximo **da mesma região do corpo**, nunca um de outra especialidade nem uma forma abstrata "que transmite a ideia". Registre a busca vazia como evidência.
 
-## Onde isso se conecta no processo
+## Organização por região
 
-A escolha de icones acontece na fase de Copy (ver `docs/processo-de-criacao.md`), documentada no template `templates/mapa-icones.md`, antes do build. O gate correspondente esta em `docs/checklists.md`.
+Uma pasta por região/agrupamento, um arquivo por card, nomeado pelo slug do título do card:
+
+```
+assets/topic-icons/
+  coluna/dor-lombar-persistente.svg
+  joelho/lesoes-de-menisco.svg
+  ...
+```
+
+Isso transforma "o ícone tem que ser da região certa" em regra mecânica: **card da página `X` só pode usar ícone de `X/`**. Um ícone de joelho numa página de coluna passa a ser estruturalmente impossível, em vez de depender de alguém notar.
+
+O agrupamento varia por especialidade — em ortopedia é região do corpo; em ginecologia pode ser fase da vida ou procedimento; em cardiologia, estrutura ou exame. O que não varia é a regra de pasta.
+
+## Não desenhar à mão
+
+Já foi tentado, com spec de traço, e o resultado foi pior que a biblioteca: desenho amador não sustenta uma LP de cliente. Ícone de card vem de biblioteca validada. O esforço vai para a **escolha**, não para o traço.
+
+## Onde isso entra no processo
+
+Fase de Copy (`docs/processo-de-criacao.md`), registrado em `templates/mapa-icones.md`, com o gate em `docs/checklists.md`.

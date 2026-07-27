@@ -50,7 +50,7 @@ Evite adjetivos vazios, promessas absolutas e dados sem fonte. Em setores regula
 
 Se a pagina usa icones por card (sintomas, causas, cuidados), preencha o `templates/mapa-icones.md` nesta mesma etapa, seguindo o metodo em `docs/repertorio-icones.md`. Cada icone e escolhido pelo conceito clinico do card, nunca pela forma que evoca fora do dominio da pagina.
 
-**Gate:** nao gerar a pagina com icones escolhidos ad hoc durante o build (etapa 5); o mapa de icones precisa estar preenchido, com bucket (A/B/C) e justificativa para cada card, antes de iniciar o build.
+**Gate:** nao gerar a pagina com icones escolhidos ad hoc durante o build (etapa 5). Antes do build: candidatos colhidos, contact sheet gerado, icones OLHADOS a 32px e mapa de icones preenchido.
 
 ## 4. Decisao visual
 
