@@ -46,6 +46,12 @@ Evite adjetivos vazios, promessas absolutas e dados sem fonte. Em setores regula
 
 **Gate:** cada CTA tem um verbo claro, um destino correto e contexto suficiente para a acao fazer sentido.
 
+### 3.1 Mapa de icones
+
+Se a pagina usa icones por card (sintomas, causas, cuidados), preencha o `templates/mapa-icones.md` nesta mesma etapa, seguindo o metodo em `docs/repertorio-icones.md`. Cada icone e escolhido pelo conceito clinico do card, nunca pela forma que evoca fora do dominio da pagina.
+
+**Gate:** nao gerar a pagina com icones escolhidos ad hoc durante o build (etapa 5). Antes do build: candidatos colhidos, contact sheet gerado, icones OLHADOS a 32px e mapa de icones preenchido.
+
 ## 4. Decisao visual
 
 Monte o mapa visual antes do build. Para cada secao, defina funcao, referencias ativas, padrao visual e decisao de interface. A referencia deve orientar composicao, ritmo, imagem, tipografia, densidade, card ou interacao; nunca ser copiada como pagina inteira.

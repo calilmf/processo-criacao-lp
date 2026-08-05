@@ -26,6 +26,9 @@ Checklists tornam a revisao repetivel. Eles nao substituem julgamento, mas imped
 - Referencias do repertorio foram citadas por ID no mapa visual.
 - Layout simples foi escolha estrategica, nao preenchimento automatico.
 - Imagens e icones possuem funcao.
+- Cada icone de card foi renderizado e OLHADO a 32px antes de ser aprovado (contact sheet), nao escolhido pelo nome.
+- Cada icone tem linha no `mapa-icones.md`, com o que o desenho mostra e a marcacao de conferido.
+- Nenhum icone repetido em dois cards da mesma pagina; card da pagina X so usa arquivo de `topic-icons/X/`.
 - Hierarquia, contraste e leitura estao claros.
 - Mobile foi revisado sem textos estourando ou controles inacessiveis.
 - A pagina nao e apenas uma mudanca de cor de outro projeto.
