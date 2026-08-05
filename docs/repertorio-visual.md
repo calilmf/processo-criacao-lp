@@ -55,6 +55,10 @@ Referencia visual pode influenciar contraste, espacamento, acabamento e microint
 
 Essa separacao e importante: design decide a apresentacao da acao; estrategia decide qual acao precisa acontecer.
 
+## Uso de fotos
+
+Regras concretas sobre foto na LP (em especial: retrato do medico nao se repete dentro da mesma pagina) estao em `docs/uso-de-fotos.md`. Este repertorio orienta composicao e ritmo; aquele documento decide qual foto vai em qual secao.
+
 ## O que nao colocar no repertorio
 
 - Copy comercial de outras marcas.
