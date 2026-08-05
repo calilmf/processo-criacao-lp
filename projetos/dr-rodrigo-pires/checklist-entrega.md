@@ -14,7 +14,7 @@ Rodado sobre `previews/dr-rodrigo-pires.html` publicado no GitHub Pages, após i
 - [x] Mapa visual preenchido com IDs de referencia e overrides justificados (ver `visual-map.md`).
 - [x] Mobile revisado a 375px — CRM/RQE visiveis no primeiro viewport, foto do medico compondo abaixo do bloco de texto.
 - [x] Contraste do texto branco sobre `--dark #17323a` verificado (WCAG AA).
-- [x] **Foto profissional real** do medico no hero e na secao autoridade (extraida do site em producao, 683x1024).
+- [x] **Foto profissional real** do medico no hero (extraida do site em producao, 683x1024) e foto real do consultorio na secao autoridade (400x500). Retrato do medico nao repetido — retrato duas vezes cansa e enfraquece o hero.
 
 ## Ícones (spec saude + repertorio-icones)
 
@@ -31,7 +31,7 @@ Rodado sobre `previews/dr-rodrigo-pires.html` publicado no GitHub Pages, após i
 - [x] FAQ usa `<details>` nativo (sem JS pesado).
 - [x] Fontes com `preconnect` e `display=swap`.
 - [x] SVGs de icones em 32x32 nativo, otimizados pela Iconify API (color inline).
-- [x] Foto do medico em JPG 683x1024, `loading="eager"` no hero e `loading="lazy"` na secao autoridade.
+- [x] Foto do medico em JPG 683x1024, `loading="eager"` no hero. Foto do consultorio real 400x500 na secao autoridade, `loading="lazy"`.
 - [ ] **Eventos de conversao** — nao aplicavel no preview (sem GTM). Bloqueante para producao.
 - [ ] **Performance com Lighthouse** — nao executado no preview. Bloqueante para producao.
 
