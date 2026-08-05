@@ -37,6 +37,7 @@ Cada seta representa uma decisao que precisa estar clara antes da proxima. Isso 
 - [Briefing de LP](templates/briefing-lp.md)
 - [Wireframe textual](templates/wireframe-textual.md)
 - [Mapa visual](templates/visual-map.md)
+- [Mapa de icones](templates/mapa-icones.md) — quando a pagina usa icones por card
 - [Checklist de entrega](templates/checklist-entrega.md)
 
 ## Como contribuir

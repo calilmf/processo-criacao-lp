@@ -26,6 +26,15 @@ Contrato minimo para Landing Pages de medicos, dentistas, psicologos, fisioterap
 - Depoimento de paciente e restrito: pode contar experiencia com o atendimento, nao pode sugerir resultado garantido. Consentimento por escrito registrado.
 - Numeros e claims tecnicos precisam de fonte verificavel citada.
 
+## Icones de card
+
+Icone em card de sintoma/causa/cuidado comunica dominio clinico. Icone errado (pulso cardiaco em pagina de ortopedia, cadeado generico em card de sintoma) nao e apenas falha estetica — desinforma o visitante sobre a especialidade da pagina.
+
+- Seguir `docs/repertorio-icones.md` sem excecao. Card so usa arquivo de `assets/topic-icons/<regiao-do-corpo-ou-tema>/`.
+- Nenhum icone e aprovado por nome. Contact sheet renderizado a 32px e a evidencia — se um leigo, olhando so o desenho, nao sabe dizer que parte do corpo/orgao e e qual e o problema, o icone esta errado.
+- Quando um conceito nao tem icone literal (menisco, bursite, entorse, tunel do carpo etc.), usar o icone anatomico mais proximo da **mesma regiao**. Nunca emprestar de outra especialidade.
+- Consultar `especialidades/<especialidade>/conceitos.md` antes de comecar — economiza tempo e evita repetir armadilhas ja documentadas (`cervical` retorna colo do utero, `joints` desenha um joelho).
+
 ## Conversao
 
 - CTA primario e uma acao de contato ou agendamento, nao venda direta.
@@ -40,3 +49,4 @@ Contrato minimo para Landing Pages de medicos, dentistas, psicologos, fisioterap
 - [ ] Depoimentos, quando presentes, tem consentimento registrado e nao sugerem resultado garantido.
 - [ ] Numeros e claims tecnicos citam fonte.
 - [ ] Politica de privacidade linkada e consentimento LGPD explicito antes do submit.
+- [ ] Icones de card seguem `docs/repertorio-icones.md`: contact sheet gerado, revisado a 32px, arquivos organizados por regiao em `assets/topic-icons/<regiao>/`. Nenhum icone escolhido apenas por nome.
