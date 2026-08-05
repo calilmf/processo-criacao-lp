@@ -4,11 +4,13 @@ Um processo documentado para criar Landing Pages com estrategia, copy, design, i
 
 ## Comece por aqui
 
-1. Leia a [arquitetura da brain](docs/arquitetura-da-brain.md) para entender o papel de cada camada.
-2. Siga o [processo de criacao](docs/processo-de-criacao.md), sem pular os gates.
-3. Use os [templates](#templates) para registrar as decisoes do projeto.
-4. Consulte o [sistema de repertorio visual](docs/repertorio-visual.md) antes de desenhar.
-5. Rode os [checklists](docs/checklists.md) antes de entregar.
+1. Se voce e um agente (Claude Code, Cursor, Copilot etc.), leia primeiro [AGENTS.md](AGENTS.md) — ele traduz o processo em regras acionaveis.
+2. Leia a [arquitetura da brain](docs/arquitetura-da-brain.md) para entender o papel de cada camada.
+3. Siga o [processo de criacao](docs/processo-de-criacao.md), sem pular os gates.
+4. Use os [templates](#templates) para registrar as decisoes do projeto.
+5. Comece qualquer LP a partir de [`assets/tokens.css`](assets/tokens.css) — paleta, tipografia e escala base.
+6. Consulte o [sistema de repertorio visual](docs/repertorio-visual.md) antes de desenhar.
+7. Rode os [checklists](docs/checklists.md) antes de entregar.
 
 ## O principio
 

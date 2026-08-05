@@ -1,0 +1,119 @@
+/*
+ * Design tokens base para Landing Pages.
+ * Extraidos do preview do Dr. Gustavo Pimpao como ponto de partida coerente.
+ * Sobrescrever tokens locais somente com justificativa registrada no mapa visual.
+ */
+
+:root {
+  /* Cores */
+  --ink: #21313a;
+  --muted: #65717a;
+  --paper: #f6f3ee;
+  --white: #ffffff;
+  --teal: #254d55;
+  --dark: #17323a;
+  --sand: #e8ddcf;
+  --green: #1f7a4d;
+  --line: rgba(33, 49, 58, 0.15);
+
+  /* Tipografia */
+  --font-sans: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --fs-h1: clamp(40px, 6vw, 68px);
+  --fs-h2: clamp(28px, 4vw, 44px);
+  --fs-h3: 20px;
+  --fs-body: 19px;
+  --fs-body-sm: 17px;
+  --fs-small: 14px;
+  --fs-kicker: 12px;
+  --lh-heading: 1.05;
+  --lh-body: 1.55;
+  --tracking-kicker: 0.12em;
+
+  /* Layout */
+  --radius: 8px;
+  --container: min(1120px, calc(100% - 40px));
+  --section-py: 86px;
+  --section-py-sm: 64px;
+
+  /* Elevacao */
+  --shadow-cta: 0 18px 38px rgba(31, 122, 77, 0.24);
+}
+
+/* Reset e base tipografica */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: var(--lh-body);
+  font-size: var(--fs-body);
+}
+
+h1, h2, h3, p { margin-top: 0; }
+h1 { font-size: var(--fs-h1); line-height: 0.98; }
+h2 { font-size: var(--fs-h2); line-height: 1.08; }
+h3 { font-size: var(--fs-h3); line-height: 1.2; }
+
+a { color: inherit; text-decoration: none; }
+
+/* Container padrao */
+.container,
+.section {
+  width: var(--container);
+  margin-inline: auto;
+}
+.section { padding-block: var(--section-py); }
+
+/* Kicker */
+.kicker {
+  color: var(--teal);
+  font-size: var(--fs-kicker);
+  font-weight: 800;
+  letter-spacing: var(--tracking-kicker);
+  text-transform: uppercase;
+  margin: 0 0 14px;
+}
+
+/* Botao base */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 20px;
+  border-radius: var(--radius);
+  font-size: var(--fs-small);
+  font-weight: 800;
+  white-space: nowrap;
+}
+.button.primary {
+  color: var(--white);
+  background: var(--green);
+  box-shadow: var(--shadow-cta);
+}
+.button.light {
+  color: var(--dark);
+  background: var(--sand);
+}
+.button.ghost {
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Responsivo */
+@media (max-width: 860px) {
+  .section { padding-block: var(--section-py-sm); }
+}
+@media (max-width: 520px) {
+  :root { --container: min(100% - 28px, 1120px); }
+  h1 { font-size: 36px; }
+  .actions .button { width: 100%; }
+}
