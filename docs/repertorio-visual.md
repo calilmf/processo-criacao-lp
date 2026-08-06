@@ -49,6 +49,14 @@ Exemplo:
 | --- | --- | --- | --- | --- |
 | Hero | Contexto e acao inicial | `ref.visual.exemplo.editorial` + `ref.visual.exemplo.healthtech` | `pattern.hero.foto-contextual-overlay` | Foto real, hierarquia editorial e CTA com alto contraste. |
 
+## Limite de reuso por cartao
+
+Um mesmo cartao de referencia (por exemplo `ref.visual.stripe.narrativa-clara-espacosa`) pode aparecer em **no maximo tres secoes** da mesma LP. Se acima disso, a pagina inteira comeca a herdar o mesmo ritmo, densidade e tratamento de card — e o resultado fica visualmente irmao de qualquer outra LP que tambem tenha usado o mesmo cartao como espinha.
+
+Aconteceu em `previews/dr-rodrigo-pires.html` v1: o cartao `stripe.narrativa-clara-espacosa` foi aplicado em cinco das oito secoes (prova, quando procurar, abordagem, servicos, convenios). Resultado: hero + resto da pagina ficaram genericos, e a criticidade do cliente foi "esta praticamente identico ao Dr. Matheus Cavalcanti".
+
+Regra pratica: se o cartao ideal ja apareceu tres vezes, escolher um cartao complementar de funcao distinta — ou desenhar uma secao original a partir da identidade puxada do site do cliente (§`docs/processo-de-criacao.md` §4.1).
+
 ## Protecao do CTA
 
 Referencia visual pode influenciar contraste, espacamento, acabamento e microinteracao. Ela nao pode alterar o verbo estrategico, destino, prioridade, tracking ou requisitos de formulario definidos para a pagina.

@@ -56,7 +56,19 @@ Se a pagina usa icones por card (sintomas, causas, cuidados), preencha o `templa
 
 Monte o mapa visual antes do build. Para cada secao, defina funcao, referencias ativas, padrao visual e decisao de interface. A referencia deve orientar composicao, ritmo, imagem, tipografia, densidade, card ou interacao; nunca ser copiada como pagina inteira.
 
-**Gate:** uma pessoa deve conseguir explicar por que cada secao parece daquele jeito sem responder apenas "porque ficou bonito".
+### 4.1 Olhar o site do cliente antes de escolher cartoes
+
+**Antes** de abrir o repertorio de referencias, inspecionar o site atual do cliente (ou material impresso, redes sociais, identidade previa) e listar tres coisas no `visual-map.md`:
+
+1. **Paleta** — cores principal e secundaria com hex, mais como sao aplicadas (bg, text, accent).
+2. **Tipografia** — familia e tratamento (uppercase, capitalize, misto), pesos usados nos titulos.
+3. **Tratamento de imagens e componentes** — botao (pill, retangular, sombra), fundo de foto (warm, cinza, sem tratamento), radius, densidade.
+
+Registrar no visual-map, na secao "Puxado do site do cliente", **o que dessa identidade vai ser usado na LP** — mesmo que seja "nada, o site esta datado e vamos elevar". A ausencia de decisao explicita e o que homogeneiza LPs entre si.
+
+Sem isso, o repertorio vira o unico input estetico e todas as LPs comecam a parecer irmas — cliente reconhece na hora, e a criticidade sobe pra "esta identica ao outro medico" (aconteceu em `previews/dr-rodrigo-pires.html` v1: usou tokens.css base + cartoes stripe + acento teal, ficou visualmente irma do Dr. Matheus Cavalcanti; correcao em PR #12 puxou paleta navy/gold/cream direto do site real).
+
+**Gate:** uma pessoa deve conseguir explicar por que cada secao parece daquele jeito sem responder apenas "porque ficou bonito" — e por que a LP parece do cliente X e nao do cliente Y da mesma agencia.
 
 ## 5. Build
 
