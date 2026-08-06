@@ -130,6 +130,7 @@
     }
     .brand-name { font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); }
     .brand-tag  { font-weight: 500; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+    .brand-tag .tag-short { display: none; }
     header nav { display: flex; gap: 28px; font-size: 14px; font-weight: 500; color: var(--navy); }
     header nav a:hover { color: var(--gold-strong); }
 
@@ -529,6 +530,8 @@
       .hero-inner p.lede { font-size: 17px; }
       .hero-actions .btn { width: 100%; }
       .convenios-list { grid-template-columns: repeat(2, 1fr); }
+      .brand-tag .tag-full { display: none; }
+      .brand-tag .tag-short { display: inline; }
     }
   </style>
 </head>
@@ -540,7 +543,10 @@
     <div class="header-inner">
       <a class="brand" href="#topo" id="topo">
         <span class="brand-name">Dr. Rodrigo Pires</span>
-        <span class="brand-tag">Ortopedia · Cirurgia do joelho · Intervencionismo da dor</span>
+        <span class="brand-tag">
+          <span class="tag-full">Ortopedia · Cirurgia do joelho · Intervencionismo da dor</span>
+          <span class="tag-short">Ortopedia · Joelho</span>
+        </span>
       </a>
       <nav>
         <a href="#quando">Quando procurar</a>
