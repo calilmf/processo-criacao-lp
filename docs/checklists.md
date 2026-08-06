@@ -33,6 +33,8 @@ Checklists tornam a revisao repetivel. Eles nao substituem julgamento, mas imped
 - Hierarquia, contraste e leitura estao claros.
 - Mobile foi revisado sem textos estourando ou controles inacessiveis.
 - A pagina nao e apenas uma mudanca de cor de outro projeto.
+- A LP nao parece irma das ultimas tres entregas — comparar screenshot com as ultimas LPs publicadas em `previews/` antes de fechar o build. Se paleta, tipografia, tratamento de botoes e cards batem em bloco, redesenhar puxando identidade do cliente (ver `docs/processo-de-criacao.md` §4.1).
+- O visual-map do projeto tem a secao "Puxado do site do cliente" preenchida — paleta, tipografia e tratamento observados no site real, e o que a LP vai puxar de la.
 
 ## Desenvolvimento
 
