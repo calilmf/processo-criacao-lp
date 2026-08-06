@@ -2,26 +2,42 @@
 
 ## Direção geral
 
-- **Tom visual:** editorial-clínico técnico. Menos "acolhedor caloroso" (que é o tom do Dr. Gustavo), mais "cirurgião preciso + médico esportivo". Diferenciação intencional de identidade dentro da mesma agência.
+- **Tom visual (v2, puxado do site real):** editorial premium warm-clínico — paleta navy profundo + dourado + creme herdada de `https://drrodrigopires.com.br/` (inspecionada com Playwright). Menos "cirurgião técnico frio", mais "consultório premium com peso institucional". Continua distinto do Dr. Gustavo (que usa burgundy/cream warm) por conta do dourado editorial (não terracota) e do navy (não dark quase preto).
 - **Densidade:** média para baixa — respiro editorial nas seções internas, hero mais denso com prova imediata.
-- **Tipo de imagem:** foto do médico em consultório (plano médio, olhando para câmera), fundo de consultório desfocado. Sem stock. Sem antes/depois. Sem paciente identificável.
-- **Iconografia:** ícones em 6 cards de serviços, um por card. Processo completo em `mapa-icones.md`: `cards.json` → `harvest-candidatos.py` (67 candidatos baixados) → `contact-sheet.py` (revisão visual) → seleção a 32px. Todos bucket A. Arquivos em `assets/topic-icons/rodrigo-pires/`. Cards de "Quando procurar" e "Abordagem" **sem ícones** por decisão — funcionam melhor em tipografia pura.
+- **Tipo de imagem:** retrato do médico no hero (plano médio, olhando para câmera, fundo warm-tostado). **Autoridade usa foto do consultório real, não o retrato** — retrato do médico não se repete na página (regra `docs/uso-de-fotos.md`, incidente PR #9). Sem stock. Sem antes/depois. Sem paciente identificável.
+- **Iconografia:** ícones em 6 cards de serviços, um por card. Processo completo em `mapa-icones.md`. **Recoloreados em `#d4b589` (gold)** via Iconify API na v2 pra casar com identidade do site — não usam mais o `--accent` (navy) como fill. Cards de "Quando procurar" e "Abordagem" **sem ícones** por decisão — funcionam melhor em tipografia pura.
 - **Movimento e microinterações:** nenhuma animação. Scroll natural. `<details>` nativo no FAQ (sem accordion custom).
-- **Regra do CTA:** preservar verbo ("Agendar avaliação"), destino (WhatsApp via bridge), prioridade (único CTA primário por viewport) e tracking (`whatsapp_click` no dataLayer) definidos no briefing.
+- **Regra do CTA:** preservar verbo ("Agendar avaliação"), destino (WhatsApp via bridge), prioridade (único CTA primário por viewport) e tracking (`whatsapp_click` no dataLayer) definidos no briefing. Primary button ganhou ícone WhatsApp inline (SVG 2-path) — herdado do padrão de conversão do próprio site do cliente.
 
-## Tokens — decisão de reuso vs override
+## Tokens — v2 puxada do site real
 
-Base: `assets/tokens.css` (Manrope + paleta ink/paper/teal/dark/sand/green).
+**Mudança importante em relação à v1:** os tokens não vêm mais de `assets/tokens.css` puros — a LP virou uma sobrescrita quase completa via `:root` no próprio `previews/dr-rodrigo-pires.html`. Motivo: a v1 usando tokens base (Manrope + paper neutro + teal) ficou visualmente irmã de outras entregas recentes (feedback direto do cliente: "está praticamente idêntico ao Dr. Matheus Cavalcanti"). A correção foi inspecionar `drrodrigopires.com.br` com Playwright e puxar paleta, tipografia e tratamento dele.
 
-**Overrides justificados:**
+**Tokens da v2 (todos aplicados via `:root` na própria página):**
 
-| Token | Base | LP Rodrigo | Justificativa |
-| --- | --- | --- | --- |
-| `--accent` (novo, mapeia CTA) | `--green #1f7a4d` | `--teal #254d55` (do próprio tokens.css) | Dr. Gustavo já ocupa acento burgundy warm. Reutilizar o `--teal` que já existe no tokens.css como cor primária dá identidade "cirúrgica sóbria" diferente sem inventar cor nova. Mantém coerência de agência. |
-| `--paper` | `#f6f3ee` (cream warm) | `#f4f4f2` (paper neutro mais frio) | Tom cream é do Dr. Gustavo. Neutro frio empurra pro tom clínico-esportivo do Rodrigo. Delta pequeno de saturação — mesma família visual, diferente identidade. |
-| Todo o resto (ink, muted, radius, fs-*, container, sombras) | — | mantido | Sem justificativa para mudar. |
+| Token | Valor | Origem |
+| --- | --- | --- |
+| `--navy` / `--ink` | `#212e51` | Cor principal do site (headings, body text, CTA primary) |
+| `--navy-dark` | `#1a2440` | Gradiente do CTA final |
+| `--gold` | `#d4b589` | Cor secundária do site (kickers, accents, ícones) |
+| `--gold-strong` | `#b89762` | Kicker em uppercase, list markers, hover |
+| `--gold-soft` | `rgba(212,181,137,0.14)` | Fundo do quadrado do ícone dos cards |
+| `--paper` | `#f3ebde` | Cream do hero e footer do site |
+| `--paper-deep` | `#ebe0cc` | Gradiente do hero |
+| `--font-sans` | `"Montserrat", ...` | Tipografia do site (era Manrope na v1) |
+| `--radius-pill` | `30px` | Pill dos botões do site |
+| `--shadow-cta` | `0 4px 10px rgba(0,0,0,0.22)` | Sombra do CTA primary do site |
+| Headings | `text-transform: capitalize` | Padrão de Title Case Por Palavra do site (v1 usava caixa mista) |
 
-Todos os outros tokens (tipografia, escala tipográfica, radius 8, container 1120, escala de heading, botão base) vêm de `assets/tokens.css` sem alteração.
+**Elementos adicionais:**
+- Botão primary: pill navy + peso 600 + ícone WhatsApp SVG inline.
+- Botão ghost: transparente + texto navy + borda `1.6px` gold.
+- `.card .card-icon`: 52×52 arredondado 999px, fundo `--gold-soft`, borda gold 0.35 opacidade.
+- `.step-num`: 36×36 navy circle com número em gold.
+- Todos os accents de lista, dots e borders internas: `--gold-strong`.
+- CTA final: gradiente navy→navy-dark com kicker gold, primary button vira branco+navy+ícone WhatsApp.
+
+Ou seja: `assets/tokens.css` não foi editado, mas a LP praticamente não o usa mais para cor. Continua herdando apenas escala tipográfica e container width (que ficaram compatíveis).
 
 ## Referências do repertório
 
@@ -43,4 +59,8 @@ Cartões consultados em `visual-repertorio/03-cartoes-referencia/`:
 
 - **Setor saúde (`specs/saude.md`):** identificação profissional no primeiro viewport, sem promessa/superlativo/promoção, sem foto de paciente, ícones seguindo `repertorio-icones.md` (v2: 6 ícones bucket A, contact sheet arquivado, ver `mapa-icones.md`).
 - **Google Ads (`specs/google-ads.md`):** rodapé sem canal direto, CTA único por viewport, bridge page com evento antes do wa.me, política de privacidade linkada. Consent Mode v2 e GTM entram na versão que for pra produção — este preview no GitHub Pages fica com `noindex` (pra não indexar preview) e sem GTM (nada de tracking em ambiente de validação visual).
-- **Base tipografia/token:** Manrope + tokens.css. Overrides listados acima, justificados. Nada mais.
+- **Base tipografia/token:** Montserrat (Google Fonts) + `:root` local com paleta navy/gold/cream extraída do site do cliente. `assets/tokens.css` continua carregado mas praticamente sem uso de cor nesta LP.
+
+## Sobre inspecionar o site do cliente antes do build
+
+O aprendizado central do rework v1→v2: **antes de escolher cartões do repertório, olhar o site real do cliente** — paleta, tipografia e tratamento de imagens. Regra promovida ao processo geral em `docs/processo-de-criacao.md` e `docs/repertorio-visual.md`. Aqui, a inspeção via Playwright pegou: navy `#212e51`, gold `#d4b589`, cream do hero, Montserrat, capitalize nas headings, pill 30px com shadow `rgba(0,0,0,0.22) 0 4px 10px`.

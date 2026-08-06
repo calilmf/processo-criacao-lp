@@ -22,6 +22,12 @@ Preenchido na fase de Copy, antes do build. Método completo em `docs/repertorio
 
 Todos bucket A (match literal), zero bucket B (composto) ou C (fallback).
 
+## Recoloração (v2)
+
+Os 6 SVGs foram sobrescritos com `fill="#d4b589"` (gold da identidade do site) via Iconify API — parâmetro `?color=%23d4b589` na URL de download. Ficaram salvos no mesmo caminho, com o mesmo nome de arquivo. Motivo: na v1 os ícones renderizavam em `--accent` (navy/teal) via CSS, mas o site do cliente usa acento dourado consistente — ícone navy sobre fundo cream ficava com peso desalinhado da identidade real.
+
+O CSS do card (`.card .card-icon`) foi ajustado para fundo `--gold-soft` (rgba dourada a 14% opacidade) + borda gold a 35% opacidade + 999px arredondado (círculo). O SVG interno herda a cor dourada do próprio arquivo — não depende mais de `fill: currentColor` + `color: var(--accent)` na v2.
+
 ## Card removido durante o processo
 
 **Terapia por onda de choque** — considerado inicialmente como card com ícone próprio, mas confirmado por harvest que nenhum ícone literal existe em toda a Iconify. As alternativas eram:
