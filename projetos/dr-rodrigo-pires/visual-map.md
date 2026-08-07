@@ -61,6 +61,23 @@ Cartões consultados em `visual-repertorio/03-cartoes-referencia/`:
 - **Google Ads (`specs/google-ads.md`):** rodapé sem canal direto, CTA único por viewport, bridge page com evento antes do wa.me, política de privacidade linkada. Consent Mode v2 e GTM entram na versão que for pra produção — este preview no GitHub Pages fica com `noindex` (pra não indexar preview) e sem GTM (nada de tracking em ambiente de validação visual).
 - **Base tipografia/token:** Montserrat (Google Fonts) + `:root` local com paleta navy/gold/cream extraída do site do cliente. `assets/tokens.css` continua carregado mas praticamente sem uso de cor nesta LP.
 
-## Sobre inspecionar o site do cliente antes do build
+## Puxado do site do cliente
 
-O aprendizado central do rework v1→v2: **antes de escolher cartões do repertório, olhar o site real do cliente** — paleta, tipografia e tratamento de imagens. Regra promovida ao processo geral em `docs/processo-de-criacao.md` e `docs/repertorio-visual.md`. Aqui, a inspeção via Playwright pegou: navy `#212e51`, gold `#d4b589`, cream do hero, Montserrat, capitalize nas headings, pill 30px com shadow `rgba(0,0,0,0.22) 0 4px 10px`.
+Seção exigida pelo `docs/checklists.md` (Design): registrar explicitamente o que foi observado no site atual do cliente e o que a LP puxou de lá.
+
+**Site inspecionado:** `https://drrodrigopires.com.br/` (via Playwright, com `getComputedStyle` nos elementos principais).
+
+| Observado no site | Puxado pra LP |
+| --- | --- |
+| Navy `#212e51` como cor principal (headings, body, CTA) | Adotado como `--navy` / `--ink` / cor primária de heading e CTA |
+| Dourado `#d4b589` como acento consistente (kicker, borda, hover) | Adotado como `--gold`, aplicado em kicker/border/list markers/ícones |
+| Cream do hero (bg quente `#f3ebde` degradando pra `#ebe0cc`) | Adotado como `--paper` / `--paper-deep`, aplicado em hero e footer |
+| Montserrat + Title Case Por Palavra nas headings | Adotado — Google Fonts + `text-transform: capitalize` em h1/h2/h3 |
+| CTA em pill (radius 30) + shadow `rgba(0,0,0,0.22) 0 4px 10px` | Adotado como `--radius-pill` + `--shadow-cta` |
+| Foto do médico em fundo warm-tostado, plano médio | Mesma foto usada no hero, casa com o cream sem processamento extra |
+
+**Não puxado (decisão consciente):**
+- Copy "eliminar suas dores" do site em produção — viola `specs/saude.md` (promessa absoluta). LP mantém tom técnico-sóbrio próprio.
+- Layout de blocos horizontais do site — a LP tem estrutura mais editorial (hero+prova+quando+abordagem+cards+autoridade+convênios+locais+FAQ+CTA) porque cumpre função de conversão, não de portfolio.
+
+**Por que essa seção existe:** o aprendizado central do rework v1→v2. Sem essa inspeção, a LP vira genérica e homogeneizada com outras entregas da agência (aconteceu na v1: "praticamente idêntica ao Dr. Matheus Cavalcanti"). Regra promovida ao processo geral em `docs/processo-de-criacao.md` §4.1.
