@@ -57,12 +57,14 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
     body {
       margin: 0;
       font-family: var(--font-sans);
       color: var(--ink);
       background: var(--paper);
+      overflow-x: hidden;
+      width: 100%;
       line-height: 1.55;
       font-size: var(--fs-body);
       -webkit-font-smoothing: antialiased;
@@ -723,24 +725,40 @@
       .hero-inner { grid-template-columns: 1fr; gap: 32px; padding: 32px 0 0; }
       .hero-content { padding-bottom: 0; }
       .hero-media { max-width: 380px; margin-inline: auto; margin-bottom: 0; line-height: 0; }
-      .hero-media img { max-height: 480px; margin-bottom: 0; vertical-align: bottom; transform: translateY(2px); }
+      .hero-media img { max-height: 460px; margin-bottom: 0; vertical-align: bottom; transform: translateY(2px); }
       .section-head { grid-template-columns: 1fr; gap: 12px; margin-bottom: 32px; }
-      .proof-inner { grid-template-columns: repeat(2, 1fr); gap: 18px; }
-      .cards, .qp-cards, .steps, .locations { grid-template-columns: 1fr; }
+      .proof-inner { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .cards, .qp-cards, .steps, .locations, #servicos .cards { grid-template-columns: 1fr; width: 100%; }
       .convenios-list { grid-template-columns: repeat(3, 1fr); }
       .authority { grid-template-columns: 1fr; gap: 32px; }
       section.section { padding: var(--section-py-sm) 0; }
-      .final { padding: 72px 20px; margin-top: 48px; }
+      .final { padding: 56px 20px; margin-top: 48px; }
       .footer-inner { grid-template-columns: 1fr; gap: 28px; }
       .footer-bottom { flex-direction: column; }
     }
+
+    @media (max-width: 640px) {
+      :root {
+        --container: min(100% - 44px, 1120px);
+      }
+      section.section-fullbg {
+        padding-inline: 22px;
+      }
+      .proof-inner { grid-template-columns: 1fr; gap: 14px; }
+      .proof-item { padding: 20px 16px; width: 100%; }
+      .hero-inner p.lede { font-size: 16px; }
+      #servicos .card { padding: 26px 20px 24px; width: 100%; box-sizing: border-box; }
+      .qp-cards .card { padding: 26px 20px 24px; width: 100%; box-sizing: border-box; }
+      .step { padding: 32px 20px 26px; width: 100%; box-sizing: border-box; }
+      .location { width: 100%; box-sizing: border-box; }
+      .location .location-body { padding: 20px 18px 16px; }
+    }
+
     @media (max-width: 520px) {
-      :root { --container: min(100% - 28px, 1120px); }
-      h1 { font-size: 36px; }
-      .hero-inner p.lede { font-size: 17px; }
-      .hero-actions .btn { width: 100%; }
+      h1 { font-size: 32px; line-height: 1.25; }
+      .hero-actions .btn { width: 100%; justify-content: center; }
       .convenios-list { grid-template-columns: repeat(2, 1fr); }
-      .brand img { height: 52px; }
+      .brand img { height: 46px; }
     }
   </style>
 </head>
