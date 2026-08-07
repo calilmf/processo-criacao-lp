@@ -19,8 +19,23 @@ Preenchido na fase de Copy, antes do build. Método completo em `docs/repertorio
 | Serviços | Medicina regenerativa (PRP) | Três células/glóbulos sanguíneos agrupados | `rodrigo-pires/medicina-regenerativa.svg` | `healthicons:blood-cells-outline` | sim | A |
 | Serviços | Cirurgia do joelho | Anatomia articular clara de joelho | `rodrigo-pires/cirurgia-do-joelho.svg` | `game-icons:knee-cap` | sim | A |
 | Serviços | Medicina esportiva | Pessoa correndo | `rodrigo-pires/medicina-esportiva.svg` | `healthicons:running-outline` | sim | A |
+| Quando procurar | Dor articular persistente | Silhueta humana com marca de dor nas costas | `rodrigo-pires/dor-persistente-com-movimento.svg` | `healthicons:back-pain-outline` | sim | A |
+| Quando procurar | Limitação no dia a dia | Pessoa apoiada em bengala | `rodrigo-pires/limitacao-para-atividades.svg` | `mdi:human-cane` | sim | A |
+| Quando procurar | Dúvida de conduta | Placa de rua com setas apontando dois lados | `rodrigo-pires/duvida-de-conduta.svg` | `material-symbols:signpost-outline` | sim | A |
+| Quando procurar | Retorno ao esporte | Medalha esportiva | `rodrigo-pires/retorno-ao-esporte.svg` | `mdi:medal-outline` | sim | A |
+| Quando procurar | Segunda opinião ortopédica | Silhueta de profissional de saúde | `rodrigo-pires/segunda-opiniao-ortopedica.svg` | `healthicons:doctor-outline` | sim | A |
+| Proof band | Convênios | Aperto de mão (acordo) | `rodrigo-pires/convenios-badge.svg` | `material-symbols:handshake-outline` | sim | A |
+| Proof band | Localização | Pin de mapa | `rodrigo-pires/localizacao-badge.svg` | `material-symbols:location-on-outline` | sim | A |
+| Proof band | Experiência | Relógio de mostrador | `rodrigo-pires/experiencia-badge.svg` | `material-symbols:schedule-outline` | sim | A |
+| Proof band | Formação | Chapéu de formatura | `rodrigo-pires/formacao-badge.svg` | `material-symbols:school-outline` | sim | A |
 
-Todos bucket A (match literal), zero bucket B (composto) ou C (fallback).
+Todos bucket A (match literal), zero bucket B (composto) ou C (fallback). Todos recoloreados em `#d4b589` via Iconify API (`?color=%23d4b589`) para bater com a identidade gold da LP.
+
+### Processo abreviado para os 9 ícones novos
+
+Batch 1 (Serviços, 6 ícones) foi feito com o processo completo — `cards.json` → `harvest-candidatos.py` (67 candidatos) → `contact-sheet.py` → revisão a 32px. Batch 2 (Quando procurar + Proof band, 9 ícones) usou processo abreviado: escolha por conceito direto da Iconify, download com cor inline, inspeção do path SVG antes de wire — economizou tempo aproveitando o mesmo tratamento visual (círculo gold-soft + gold-strong border) já validado no Batch 1. Sem novos candidatos rejeitados; todos bucket A.
+
+Um swap durante a escolha: `mdi:walk` estava previsto para "Limitação no dia a dia" mas foi trocado por `mdi:human-cane` porque `walk` mostra a pessoa **executando** o movimento — o oposto do que o card comunica.
 
 ## Recoloração (v2)
 
