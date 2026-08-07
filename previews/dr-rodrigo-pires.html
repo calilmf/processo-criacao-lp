@@ -128,13 +128,11 @@
     }
     .brand {
       color: var(--navy);
-      display: flex;
-      flex-direction: column;
-      line-height: 1.2;
+      display: inline-flex;
+      align-items: center;
+      line-height: 1;
     }
-    .brand-name { font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); }
-    .brand-tag  { font-weight: 500; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
-    .brand-tag .tag-short { display: none; }
+    .brand img { display: block; height: 68px; width: auto; }
     header nav { display: flex; gap: 28px; font-size: 14px; font-weight: 500; color: var(--navy); }
     header nav a:hover { color: var(--gold-strong); }
 
@@ -158,7 +156,7 @@
       position: relative;
       width: var(--container);
       margin-inline: auto;
-      padding: 88px 0 96px;
+      padding: 40px 0 72px;
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
       gap: 56px;
@@ -501,7 +499,7 @@
     /* Responsivo */
     @media (max-width: 960px) {
       header nav { display: none; }
-      .hero-inner { grid-template-columns: 1fr; gap: 40px; padding: 72px 0 64px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 32px; padding: 32px 0 56px; }
       .hero-media { max-width: 380px; margin-inline: auto; }
       .section-head { grid-template-columns: 1fr; gap: 12px; margin-bottom: 32px; }
       .proof-inner { grid-template-columns: repeat(2, 1fr); gap: 18px; }
@@ -519,8 +517,7 @@
       .hero-inner p.lede { font-size: 17px; }
       .hero-actions .btn { width: 100%; }
       .convenios-list { grid-template-columns: repeat(2, 1fr); }
-      .brand-tag .tag-full { display: none; }
-      .brand-tag .tag-short { display: inline; }
+      .brand img { height: 52px; }
     }
   </style>
 </head>
@@ -530,12 +527,8 @@
 
   <header>
     <div class="header-inner">
-      <a class="brand" href="#topo" id="topo">
-        <span class="brand-name">Dr. Rodrigo Pires</span>
-        <span class="brand-tag">
-          <span class="tag-full">Ortopedia · Cirurgia do joelho · Intervencionismo da dor</span>
-          <span class="tag-short">Ortopedia · Joelho</span>
-        </span>
+      <a class="brand" href="#topo" id="topo" aria-label="Dr. Rodrigo Pires — Ortopedia e Medicina da Dor">
+        <img src="img/logo-rodrigo-pires.png" alt="Dr. Rodrigo Pires — Ortopedia e Medicina da Dor" />
       </a>
       <nav>
         <a href="#quando">Quando procurar</a>
