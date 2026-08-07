@@ -206,6 +206,41 @@
       margin-inline: auto;
       padding: var(--section-py) 0;
     }
+    /* Section com bg full-width */
+    section.section-fullbg {
+      width: 100%;
+      padding-inline: max(20px, calc((100% - 1120px)/2));
+    }
+    section.section-fullbg > .section-inner { max-width: 1120px; margin-inline: auto; }
+    section.section--white { background: var(--white); }
+    section.section--dark {
+      background: linear-gradient(180deg, var(--navy) 0%, var(--navy-dark) 100%);
+      color: var(--paper);
+    }
+    section.section--dark h2 { color: var(--white); }
+    section.section--dark .kicker { color: var(--gold); }
+    section.section--dark .section-head p.apoio { color: rgba(255,255,255,0.75); }
+    section.section--dark .step {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(212,181,137,0.30);
+    }
+    section.section--dark .step h3 { color: var(--white); }
+    section.section--dark .step p { color: rgba(255,255,255,0.75); }
+    section.section--dark .step .step-dot {
+      background: var(--navy);
+      border-color: var(--gold);
+      box-shadow: 0 0 0 4px var(--navy);
+    }
+    section.section--dark .step .step-dot::before { background: var(--gold); }
+    section.section--dark .steps::before {
+      background: linear-gradient(90deg, var(--gold) 0%, var(--gold-strong) 50%, var(--gold) 100%);
+      opacity: 0.6;
+    }
+    /* Padrao dots dourados sutil */
+    .pattern-dots {
+      background-image: radial-gradient(circle at 1px 1px, rgba(184, 151, 98, 0.16) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
     .section-head {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
@@ -644,7 +679,7 @@
       </div>
     </div>
 
-    <section id="quando" class="section">
+    <section id="quando" class="section pattern-dots">
       <div class="section-head">
         <div>
           <p class="kicker">Quando procurar</p>
@@ -681,15 +716,16 @@
       </div>
     </section>
 
-    <section id="abordagem" class="section" style="background: var(--white); width: 100%; padding-inline: max(20px, calc((100% - 1120px)/2));">
-      <div class="section-head" style="max-width: 1120px; margin-inline: auto;">
+    <section id="abordagem" class="section section-fullbg section--dark">
+      <div class="section-inner" style="padding: var(--section-py) 0;">
+      <div class="section-head">
         <div>
           <p class="kicker">Abordagem</p>
           <h2>Do sintoma à decisão em três passos.</h2>
         </div>
         <p class="apoio">O caminho não começa pelo procedimento. Ele começa por entender a dor, o contexto e o que faz sentido para o seu caso.</p>
       </div>
-      <div class="steps" style="max-width: 1120px; margin-inline: auto;">
+      <div class="steps">
         <article class="step">
           <span class="step-dot" aria-hidden="true"></span>
           <h3>Avaliação individual</h3>
@@ -705,6 +741,7 @@
           <h3>Conduta por etapas</h3>
           <p>Conservador primeiro. Procedimento intervencionista quando há indicação. Cirurgia do joelho quando o quadro pede, nunca o inverso.</p>
         </article>
+      </div>
       </div>
     </section>
 
@@ -750,7 +787,8 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section-fullbg section--white">
+      <div class="section-inner" style="padding: var(--section-py) 0;">
       <div class="authority">
         <div class="authority-media">
           <img src="img/sobre-rodrigo-pires.jpg" alt="Dr. Rodrigo Pires, ortopedista, em retrato informal" loading="lazy" />
@@ -786,9 +824,10 @@
           </div>
         </div>
       </div>
+      </div>
     </section>
 
-    <div id="convenios" class="convenios-band">
+    <div id="convenios" class="convenios-band pattern-dots">
       <div class="convenios-inner">
         <p class="kicker">Convênios</p>
         <h2 style="margin-bottom: 6px;">Veja a lista de convênios atendidos.</h2>
@@ -870,7 +909,8 @@
       </div>
     </section>
 
-    <section id="duvidas" class="section faq">
+    <section id="duvidas" class="section faq section-fullbg section--white">
+      <div class="section-inner" style="padding: var(--section-py) 0;">
       <div class="section-head">
         <div>
           <p class="kicker">Dúvidas frequentes</p>
@@ -907,6 +947,7 @@
         <summary>Posso levar exames que já fiz?</summary>
         <p>Sim. Radiografias, ressonâncias, tomografias, ultrassons e laudos anteriores ajudam a compor o quadro. Se algum exame estiver muito antigo ou faltar, a indicação de exame complementar é feita na própria consulta.</p>
       </details>
+      </div>
     </section>
 
     <section id="agendar" class="final">
