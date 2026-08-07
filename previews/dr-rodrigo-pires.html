@@ -299,12 +299,24 @@
     }
     .proof-item .kicker { text-align: center; margin-bottom: 6px; }
     .proof-item strong { display: block; text-align: center; font-weight: 700; font-size: 15px; line-height: 1.4; color: var(--ink); }
-    .proof-item:nth-child(1) .proof-icon { background: rgba(16, 185, 129, 0.12); border-color: #10b981; }
-    .proof-item:nth-child(2) .proof-icon { background: rgba(225, 29, 72, 0.12); border-color: #e11d48; }
-    .proof-item:nth-child(3) .proof-icon { background: rgba(217, 119, 6, 0.12); border-color: #d97706; }
-    .proof-item:nth-child(4) .proof-icon { background: rgba(79, 70, 229, 0.12); border-color: #4f46e5; }
+    .proof-item:nth-child(1) .proof-icon { border: 2px solid #10b981; }
+    .proof-item:nth-child(2) .proof-icon { border: 2px solid #e11d48; }
+    .proof-item:nth-child(3) .proof-icon { border: 2px solid #d97706; }
+    .proof-item:nth-child(4) .proof-icon { border: 2px solid #4f46e5; }
+    .proof-item .proof-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      overflow: hidden;
+      margin: 0 auto 14px auto;
+      box-shadow: 0 4px 12px rgba(33, 46, 81, 0.08);
+    }
+    .proof-item .proof-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-    /* Quando procurar — Formato 1: Cards arredondados com topo colorido e badge circular centralizado */
+    /* Quando procurar — Formato 1: Cards arredondados com topo colorido e ilustrações 3D */
     .qp-cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -323,15 +335,15 @@
       transition: all 0.25s ease;
     }
     .qp-cards .card:nth-child(1) { border-top: 4px solid #e11d48; }
-    .qp-cards .card:nth-child(1) .card-icon { background: rgba(225, 29, 72, 0.10); border-color: #e11d48; }
+    .qp-cards .card:nth-child(1) .card-icon { border: 2px solid #e11d48; }
     .qp-cards .card:nth-child(2) { border-top: 4px solid #ea580c; }
-    .qp-cards .card:nth-child(2) .card-icon { background: rgba(234, 88, 12, 0.10); border-color: #ea580c; }
+    .qp-cards .card:nth-child(2) .card-icon { border: 2px solid #ea580c; }
     .qp-cards .card:nth-child(3) { border-top: 4px solid #6366f1; }
-    .qp-cards .card:nth-child(3) .card-icon { background: rgba(99, 102, 241, 0.10); border-color: #6366f1; }
+    .qp-cards .card:nth-child(3) .card-icon { border: 2px solid #6366f1; }
     .qp-cards .card:nth-child(4) { border-top: 4px solid #10b981; }
-    .qp-cards .card:nth-child(4) .card-icon { background: rgba(16, 185, 129, 0.10); border-color: #10b981; }
+    .qp-cards .card:nth-child(4) .card-icon { border: 2px solid #10b981; }
     .qp-cards .card:nth-child(5) { border-top: 4px solid #0284c7; }
-    .qp-cards .card:nth-child(5) .card-icon { background: rgba(2, 132, 199, 0.10); border-color: #0284c7; }
+    .qp-cards .card:nth-child(5) .card-icon { border: 2px solid #0284c7; }
 
     .qp-cards .card:hover {
       transform: translateY(-4px);
@@ -341,12 +353,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      overflow: hidden;
       margin: 0 auto 20px auto;
+      box-shadow: 0 6px 16px rgba(33, 46, 81, 0.1);
     }
-    .qp-cards .card .card-icon img { width: 28px; height: 28px; display: block; }
+    .qp-cards .card .card-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .qp-cards .card h3 { text-align: center; margin-bottom: 10px; font-size: 18px; color: var(--ink); }
     .qp-cards .card p { text-align: center; margin: 0; font-size: 15px; color: var(--ink-soft); line-height: 1.55; }
 
@@ -405,7 +419,7 @@
     .step h3 { text-align: center; margin-top: 10px; margin-bottom: 10px; color: var(--white); font-size: 18px; }
     .step p { text-align: center; margin: 0; color: rgba(255,255,255,0.78); font-size: 15px; line-height: 1.55; }
 
-    /* Serviços — Formato 3: Cards com ícone em badge quadrado-arredondado escuro com brilho colorido */
+    /* Serviços — Formato 3: Cards com ilustrações 3D em crachás moldurados */
     #servicos .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -423,12 +437,12 @@
       box-shadow: 0 4px 16px rgba(33, 46, 81, 0.03);
       transition: all 0.3s ease;
     }
-    #servicos .card:nth-child(1) .card-icon { background: #0f172a; border: 1.5px solid #38bdf8; box-shadow: 0 6px 16px rgba(56, 189, 248, 0.22); }
-    #servicos .card:nth-child(2) .card-icon { background: #0f172a; border: 1.5px solid #2dd4bf; box-shadow: 0 6px 16px rgba(45, 212, 191, 0.22); }
-    #servicos .card:nth-child(3) .card-icon { background: #0f172a; border: 1.5px solid #fb7185; box-shadow: 0 6px 16px rgba(251, 113, 133, 0.22); }
-    #servicos .card:nth-child(4) .card-icon { background: #0f172a; border: 1.5px solid #c084fc; box-shadow: 0 6px 16px rgba(192, 132, 252, 0.22); }
-    #servicos .card:nth-child(5) .card-icon { background: #0f172a; border: 1.5px solid #fbbf24; box-shadow: 0 6px 16px rgba(251, 191, 36, 0.22); }
-    #servicos .card:nth-child(6) .card-icon { background: #0f172a; border: 1.5px solid #34d399; box-shadow: 0 6px 16px rgba(52, 211, 153, 0.22); }
+    #servicos .card:nth-child(1) .card-icon { border: 2px solid #38bdf8; box-shadow: 0 6px 16px rgba(56, 189, 248, 0.22); }
+    #servicos .card:nth-child(2) .card-icon { border: 2px solid #2dd4bf; box-shadow: 0 6px 16px rgba(45, 212, 191, 0.22); }
+    #servicos .card:nth-child(3) .card-icon { border: 2px solid #fb7185; box-shadow: 0 6px 16px rgba(251, 113, 133, 0.22); }
+    #servicos .card:nth-child(4) .card-icon { border: 2px solid #c084fc; box-shadow: 0 6px 16px rgba(192, 132, 252, 0.22); }
+    #servicos .card:nth-child(5) .card-icon { border: 2px solid #fbbf24; box-shadow: 0 6px 16px rgba(251, 191, 36, 0.22); }
+    #servicos .card:nth-child(6) .card-icon { border: 2px solid #34d399; box-shadow: 0 6px 16px rgba(52, 211, 153, 0.22); }
 
     #servicos .card:nth-child(1):hover { border-color: #38bdf8; background: var(--white); transform: translateY(-4px); box-shadow: 0 14px 30px rgba(56, 189, 248, 0.12); }
     #servicos .card:nth-child(2):hover { border-color: #2dd4bf; background: var(--white); transform: translateY(-4px); box-shadow: 0 14px 30px rgba(45, 212, 191, 0.12); }
@@ -441,12 +455,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 58px;
-      height: 58px;
-      border-radius: 16px;
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      overflow: hidden;
       margin: 0 auto 20px auto;
     }
-    #servicos .card .card-icon img { width: 30px; height: 30px; display: block; }
+    #servicos .card .card-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
     #servicos .card h3 { text-align: center; margin-bottom: 10px; font-size: 18px; color: var(--ink); }
     #servicos .card p { text-align: center; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
 
@@ -754,12 +769,12 @@
     <div class="proof-band">
       <div class="proof-inner">
         <div class="proof-item">
-          <span class="proof-icon" aria-hidden="true"><img src="assets/topic-icons/rodrigo-pires/convenios-badge.svg" alt="" /></span>
+          <span class="proof-icon" aria-hidden="true"><img src="img/3d-icons/icon_convenios.jpg" alt="" /></span>
           <p class="kicker">Convênios</p>
           <strong>+40 convênios atendidos.</strong>
         </div>
         <div class="proof-item">
-          <span class="proof-icon" aria-hidden="true"><img src="assets/topic-icons/rodrigo-pires/localizacao-badge.svg" alt="" /></span>
+          <span class="proof-icon" aria-hidden="true"><img src="img/3d-icons/icon_localizacao.jpg" alt="" /></span>
           <p class="kicker">Localização</p>
           <strong>Asa Norte e Taguatinga, dois locais de atendimento.</strong>
         </div>
@@ -786,27 +801,27 @@
       </div>
       <div class="cards qp-cards">
         <article class="card">
-          <span class="card-icon" aria-hidden="true"><img src="assets/topic-icons/rodrigo-pires/dor-persistente-com-movimento.svg" alt="" /></span>
+          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_dor_persistente.jpg" alt="" /></span>
           <h3>Dor articular persistente</h3>
           <p>Joelho, ombro, quadril ou coluna com dor que não passa ou piora com o movimento.</p>
         </article>
         <article class="card">
-          <span class="card-icon" aria-hidden="true"><img src="assets/topic-icons/rodrigo-pires/limitacao-para-atividades.svg" alt="" /></span>
+          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_limitacao_atividades.jpg" alt="" /></span>
           <h3>Limitação no dia a dia</h3>
           <p>Dificuldade para caminhar, treinar, trabalhar ou dormir bem por causa da dor.</p>
         </article>
         <article class="card">
-          <span class="card-icon" aria-hidden="true"><img src="assets/topic-icons/rodrigo-pires/duvida-de-conduta.svg" alt="" /></span>
+          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_duvida_conduta.jpg" alt="" /></span>
           <h3>Dúvida de conduta</h3>
           <p>Entre continuar tratamento conservador, fazer procedimento ou considerar cirurgia.</p>
         </article>
         <article class="card">
-          <span class="card-icon" aria-hidden="true"><img src="assets/topic-icons/rodrigo-pires/retorno-ao-esporte.svg" alt="" /></span>
+          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_retorno_esporte.jpg" alt="" /></span>
           <h3>Retorno ao esporte</h3>
           <p>Após lesão ou cirurgia, com plano de reabilitação até a atividade completa.</p>
         </article>
         <article class="card">
-          <span class="card-icon" aria-hidden="true"><img src="assets/topic-icons/rodrigo-pires/segunda-opiniao-ortopedica.svg" alt="" /></span>
+          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_segunda_opiniao.jpg" alt="" /></span>
           <h3>Segunda opinião ortopédica</h3>
           <p>Antes de decidir uma intervenção proposta em outro atendimento.</p>
         </article>
@@ -852,32 +867,32 @@
       </div>
       <div class="cards">
         <article class="card">
-          <span class="card-icon" aria-hidden="true"><img src="assets/topic-icons/rodrigo-pires/consulta-ortopedica.svg" alt="" /></span>
+          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_consulta_ortopedica.jpg" alt="" /></span>
           <h3>Consulta ortopédica</h3>
           <p>Avaliação de dor no joelho, ombro, quadril, coluna, tornozelo e demais queixas ortopédicas.</p>
         </article>
         <article class="card">
-          <span class="card-icon" aria-hidden="true"><img src="assets/topic-icons/rodrigo-pires/ultrassonografia.svg" alt="" /></span>
+          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_ultrassonografia.jpg" alt="" /></span>
           <h3>Ultrassonografia musculoesquelética</h3>
           <p>Imagem em tempo real, na própria consulta, para dor articular e de partes moles quando indicada.</p>
         </article>
         <article class="card">
-          <span class="card-icon" aria-hidden="true"><img src="assets/topic-icons/rodrigo-pires/infiltracoes-e-bloqueios.svg" alt="" /></span>
+          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_infiltracoes.jpg" alt="" /></span>
           <h3>Infiltrações e bloqueios</h3>
           <p>Infiltrações articulares, bloqueios para dor e terapia por ondas de choque, guiadas por ultrassom quando indicado.</p>
         </article>
         <article class="card">
-          <span class="card-icon" aria-hidden="true"><img src="assets/topic-icons/rodrigo-pires/medicina-regenerativa.svg" alt="" /></span>
+          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_medicina_regenerativa.jpg" alt="" /></span>
           <h3>Medicina regenerativa</h3>
           <p>Aplicação de PRP e outros ortobiológicos para articulações e tendões, conforme avaliação clínica.</p>
         </article>
         <article class="card">
-          <span class="card-icon" aria-hidden="true"><img src="assets/topic-icons/rodrigo-pires/cirurgia-do-joelho.svg" alt="" /></span>
+          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_cirurgia_joelho.jpg" alt="" /></span>
           <h3>Cirurgia do joelho</h3>
           <p>Avaliação para procedimentos cirúrgicos quando há indicação: lesões meniscais, ligamentares, artrose e outras.</p>
         </article>
         <article class="card">
-          <span class="card-icon" aria-hidden="true"><img src="assets/topic-icons/rodrigo-pires/medicina-esportiva.svg" alt="" /></span>
+          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_medicina_esportiva.jpg" alt="" /></span>
           <h3>Medicina esportiva</h3>
           <p>Avaliação de lesões esportivas, sobrecargas de treino e retorno seguro às atividades.</p>
         </article>
