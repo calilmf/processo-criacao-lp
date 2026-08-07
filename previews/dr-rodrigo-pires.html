@@ -104,8 +104,20 @@
     }
     .btn.primary { background: var(--navy); color: var(--white); box-shadow: var(--shadow-cta); }
     .btn.primary:hover { transform: translateY(-1px); box-shadow: 0 6px 14px rgba(0,0,0,0.28); }
-    .btn.ghost   { background: transparent; color: var(--navy); border: 1.6px solid var(--gold); }
-    .btn.ghost:hover { background: var(--gold-soft); }
+    .btn.ghost {
+      background: var(--white);
+      color: var(--navy);
+      border: 1.8px solid var(--gold-strong);
+      font-weight: 700;
+      box-shadow: 0 3px 10px rgba(33, 46, 81, 0.08);
+    }
+    .btn.ghost:hover {
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(33, 46, 81, 0.16);
+    }
     .btn.outline { background: transparent; color: var(--navy); border: 1.6px solid var(--navy); }
     .btn.outline:hover { background: var(--accent-soft); }
     .btn .wa-icon { width: 18px; height: 18px; flex: none; }
