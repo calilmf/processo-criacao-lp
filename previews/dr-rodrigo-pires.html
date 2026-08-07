@@ -160,11 +160,14 @@
       z-index: 1;
       width: var(--container);
       margin-inline: auto;
-      padding: 40px 0 72px;
+      padding: 48px 0 0;
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
       gap: 56px;
-      align-items: center;
+      align-items: end;
+    }
+    .hero-content {
+      padding-bottom: 56px;
     }
     .hero-inner .kicker { color: var(--gold-strong); }
     .hero-inner h1 { color: var(--navy); max-width: 620px; }
@@ -193,6 +196,8 @@
       display: flex;
       align-items: flex-end;
       justify-content: center;
+      margin-bottom: 0;
+      line-height: 0;
     }
     .hero-media img {
       width: auto;
@@ -201,6 +206,9 @@
       max-height: 640px;
       object-fit: contain;
       display: block;
+      margin-bottom: 0;
+      vertical-align: bottom;
+      transform: translateY(2px);
       filter: drop-shadow(0 8px 16px rgba(33, 46, 81, 0.15));
     }
 
@@ -759,7 +767,7 @@
 
     <section class="hero">
       <div class="hero-inner">
-        <div>
+        <div class="hero-content">
           <p class="kicker">Ortopedista em Brasília · Cirurgião do joelho</p>
           <h1>Ortopedista Especialista em Joelho.</h1>
           <p class="lede">Dr. Rodrigo Pires é médico ortopedista e traumatologista com foco em cirurgia do joelho e intervenção em dor. Atendimento em vários locais e +40 convênios atendidos.</p>
