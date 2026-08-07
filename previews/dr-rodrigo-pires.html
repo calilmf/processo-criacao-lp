@@ -720,8 +720,10 @@
     /* Responsivo */
     @media (max-width: 960px) {
       header nav { display: none; }
-      .hero-inner { grid-template-columns: 1fr; gap: 32px; padding: 32px 0 56px; }
-      .hero-media { max-width: 380px; margin-inline: auto; }
+      .hero-inner { grid-template-columns: 1fr; gap: 32px; padding: 32px 0 0; }
+      .hero-content { padding-bottom: 0; }
+      .hero-media { max-width: 380px; margin-inline: auto; margin-bottom: 0; line-height: 0; }
+      .hero-media img { max-height: 480px; margin-bottom: 0; vertical-align: bottom; transform: translateY(2px); }
       .section-head { grid-template-columns: 1fr; gap: 12px; margin-bottom: 32px; }
       .proof-inner { grid-template-columns: repeat(2, 1fr); gap: 18px; }
       .cards, .qp-cards, .steps, .locations { grid-template-columns: 1fr; }
