@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, follow" />
-  <title>Preview LP — Dr. Rodrigo Pires · Ortopedista em Brasília</title>
+  <title>Preview LP · Dr. Rodrigo Pires · Ortopedista em Brasília</title>
   <meta name="description" content="Preview da landing page do Dr. Rodrigo Pires, ortopedista e traumatologista em Brasília, para campanha de Google Ads." />
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23212e51'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='18' fill='%23d4b589'%3ER%3C/text%3E%3C/svg%3E" />
@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="preload" as="image" href="img/dr-rodrigo-pires.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="img/dr-rodrigo-pires-nobg.webp" fetchpriority="high" />
 
   <style>
     /* Tokens derivados da identidade visual de drrodrigopires.com.br
@@ -140,7 +140,8 @@
     .hero {
       position: relative;
       color: var(--navy);
-      background: linear-gradient(180deg, var(--paper) 0%, var(--paper-deep) 100%);
+      background:
+        radial-gradient(ellipse 80% 70% at 78% 45%, #d4b994 0%, #c4a685 45%, #a88968 100%);
       overflow: hidden;
     }
     .hero::before {
@@ -148,8 +149,8 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 88% 20%, rgba(212, 181, 137, 0.20) 0%, transparent 45%),
-        radial-gradient(circle at 8% 92%, rgba(33, 46, 81, 0.05) 0%, transparent 50%);
+        radial-gradient(circle at 88% 20%, rgba(255, 240, 210, 0.25) 0%, transparent 45%),
+        radial-gradient(circle at 8% 92%, rgba(33, 46, 81, 0.06) 0%, transparent 50%);
       pointer-events: none;
     }
     .hero-inner {
@@ -186,18 +187,18 @@
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
     .hero-media {
       position: relative;
-      aspect-ratio: 4 / 5;
-      border-radius: var(--radius);
-      overflow: hidden;
-      background: var(--paper-deep);
-      box-shadow: 0 12px 32px rgba(33, 46, 81, 0.16);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
     }
     .hero-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      max-height: 640px;
+      object-fit: contain;
       display: block;
+      filter: drop-shadow(0 8px 16px rgba(33, 46, 81, 0.15));
     }
 
     /* Sections */
@@ -313,6 +314,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center top;
       display: block;
     }
     .authority-body ul {
@@ -523,12 +525,12 @@
 </head>
 <body>
 
-  <div class="preview-banner"><strong>Preview</strong>LP em validação — não publicar em Ads sem completar as pendências documentadas no repositório do projeto.</div>
+  <div class="preview-banner"><strong>Preview</strong>LP em validação. Não publicar em Ads sem completar as pendências documentadas no repositório do projeto.</div>
 
   <header>
     <div class="header-inner">
-      <a class="brand" href="#topo" id="topo" aria-label="Dr. Rodrigo Pires — Ortopedia e Medicina da Dor">
-        <img src="img/logo-rodrigo-pires.png" alt="Dr. Rodrigo Pires — Ortopedia e Medicina da Dor" />
+      <a class="brand" href="#topo" id="topo" aria-label="Dr. Rodrigo Pires · Ortopedia e Medicina da Dor">
+        <img src="img/logo-rodrigo-pires.png" alt="Dr. Rodrigo Pires · Ortopedia e Medicina da Dor" />
       </a>
       <nav>
         <a href="#quando">Quando procurar</a>
@@ -549,7 +551,7 @@
         <div>
           <p class="kicker">Ortopedista em Brasília · Cirurgião do joelho</p>
           <h1>Ortopedista em Brasília para dor no joelho, ombro, quadril e coluna.</h1>
-          <p class="lede">Dr. Rodrigo Pires, ortopedista e traumatologista com atuação em cirurgia do joelho e procedimentos minimamente invasivos para dor articular. Atendimento em duas unidades em Brasília — Asa Norte e Taguatinga.</p>
+          <p class="lede">Dr. Rodrigo Pires, ortopedista e traumatologista com atuação em cirurgia do joelho e procedimentos minimamente invasivos para dor articular. Atendimento em duas unidades em Brasília, Asa Norte e Taguatinga.</p>
           <div class="credentials" aria-label="Credenciais profissionais">
             <span class="pill">CRM/DF 22900</span>
             <span class="pill">RQE 18477</span>
@@ -564,7 +566,7 @@
           </div>
         </div>
         <div class="hero-media">
-          <img src="img/dr-rodrigo-pires.jpg" alt="Retrato profissional do Dr. Rodrigo Pires" loading="eager" fetchpriority="high" />
+          <img src="img/dr-rodrigo-pires-nobg.webp" alt="Retrato profissional do Dr. Rodrigo Pires" loading="eager" fetchpriority="high" />
         </div>
       </div>
     </section>
@@ -653,7 +655,7 @@
         <article class="step">
           <span class="step-num">03</span>
           <h3>Conduta por etapas</h3>
-          <p>Conservador primeiro. Procedimento intervencionista quando há indicação. Cirurgia do joelho quando o quadro pede — nunca o inverso.</p>
+          <p>Conservador primeiro. Procedimento intervencionista quando há indicação. Cirurgia do joelho quando o quadro pede, nunca o inverso.</p>
         </article>
       </div>
     </section>
@@ -711,13 +713,13 @@
           <p style="color: var(--muted); margin-bottom: 4px;">CRM/DF 22900 · RQE 18477 · TEOT 17060</p>
           <p style="color: var(--ink);">Ortopedista e traumatologista com atuação em cirurgia do joelho, procedimentos intervencionistas para dor e medicina esportiva.</p>
           <ul>
-            <li><strong>Título de Especialista em Cirurgia do Joelho — SBCJ (2023).</strong> Programa Avançado no Hospital das Forças Armadas, serviço credenciado pela Sociedade Brasileira de Cirurgia do Joelho.</li>
-            <li><strong>Residência em Ortopedia e Traumatologia — HFA/SBOT (2020).</strong> TEOT 17060 aprovado em 2020.</li>
-            <li><strong>Pós-graduação em Medicina Intervencionista da Dor — ITC-Brasília / Instituto Vanguard (2025).</strong></li>
-            <li><strong>Pós-graduação em Ultrassonografia Musculoesquelética e Intervenção — APM (2025).</strong></li>
-            <li><strong>Pós-graduação em Medicina Esportiva — APM (em curso).</strong></li>
-            <li><strong>Hospital de Base do DF — HBDF (desde 2022).</strong> Ortopedista no Pronto Socorro, com atendimento em cirurgia do joelho e traumas.</li>
-            <li><strong>Ceilândia Esporte Clube (desde 2025).</strong> Médico do departamento médico do time de futebol — prevenção, intervenção e retorno de atletas.</li>
+            <li><strong>Título de Especialista em Cirurgia do Joelho, SBCJ (2023).</strong></li>
+            <li><strong>Residência em Ortopedia e Traumatologia, HFA/SBOT (2020).</strong></li>
+            <li><strong>Pós-graduação em Medicina Intervencionista da Dor, ITC-Brasília / Instituto Vanguard (2025).</strong></li>
+            <li><strong>Pós-graduação em Ultrassonografia Musculoesquelética e Intervenção, APM (2025).</strong></li>
+            <li><strong>Pós-graduação em Medicina Esportiva, APM (em curso).</strong></li>
+            <li><strong>Hospital de Base do DF, HBDF (desde 2022).</strong></li>
+            <li><strong>Ceilândia Esporte Clube (desde 2025).</strong></li>
           </ul>
         </div>
       </div>
@@ -726,9 +728,11 @@
     <div id="convenios" class="convenios-band">
       <div class="convenios-inner">
         <p class="kicker">Convênios</p>
-        <h2 style="margin-bottom: 6px;">Cobertura ampla para servidor público federal em Brasília.</h2>
+        <h2 style="margin-bottom: 6px;">Veja a lista de convênios atendidos.</h2>
         <p style="color: var(--muted); font-size: 17px; max-width: 60ch;">Confirmação de cobertura por unidade e plano é feita pelo WhatsApp antes do agendamento.</p>
         <div class="convenios-list" aria-label="Convênios aceitos">
+          <span>Bradesco Saúde</span>
+          <span>Unimed</span>
           <span>SIS Senado</span>
           <span>TRE Saúde</span>
           <span>TRT Saúde</span>
@@ -775,13 +779,13 @@
         <article class="location">
           <p class="region">Asa Norte</p>
           <h3>Neurospine</h3>
-          <p>Instituto de Neurocirurgia — Asa Norte, Brasília — DF.</p>
+          <p>Instituto de Neurocirurgia, Asa Norte, Brasília, DF.</p>
           <span class="todo"><span>Endereço completo a validar</span></span>
         </article>
         <article class="location">
           <p class="region">Taguatinga Norte</p>
           <h3>JK Ortopedia</h3>
-          <p>Em frente ao Shopping JK — Taguatinga Norte, Brasília — DF.</p>
+          <p>Em frente ao Shopping JK, Taguatinga Norte, Brasília, DF.</p>
           <span class="todo"><span>Endereço completo a validar</span></span>
         </article>
       </div>
@@ -802,19 +806,19 @@
       </details>
       <details>
         <summary>Toda dor de joelho vira cirurgia?</summary>
-        <p>Não. A conduta depende do diagnóstico, da limitação funcional e da resposta ao tratamento conservador. O caminho começa por orientação, reabilitação e, quando indicado, procedimento minimamente invasivo. Cirurgia entra quando o quadro pede — nunca como primeira resposta.</p>
+        <p>Não. A conduta depende do diagnóstico, da limitação funcional e da resposta ao tratamento conservador. O caminho começa por orientação, reabilitação e, quando indicado, procedimento minimamente invasivo. Cirurgia entra quando o quadro pede, nunca como primeira resposta.</p>
       </details>
       <details>
         <summary>Como funciona um procedimento guiado por ultrassom?</summary>
-        <p>A ultrassonografia musculoesquelética permite ver a estrutura articular ou o tecido de partes moles em tempo real, guiando a agulha do procedimento — bloqueio, infiltração, coleta — pela imagem em vez de referência anatômica pura. É recurso útil quando a localização precisa da agulha faz diferença para o procedimento indicado.</p>
+        <p>A ultrassonografia musculoesquelética permite ver a estrutura articular ou o tecido de partes moles em tempo real, guiando a agulha do procedimento (bloqueio, infiltração, coleta) pela imagem em vez de referência anatômica pura. É recurso útil quando a localização precisa da agulha faz diferença para o procedimento indicado.</p>
       </details>
       <details>
         <summary>O que é medicina regenerativa e quando é indicada?</summary>
-        <p>Envolve o uso de PRP (plasma rico em plaquetas) e outros ortobiológicos aplicados em articulações e tendões para estimular processos naturais de reparo. A indicação depende do diagnóstico e das expectativas realistas do tratamento — não substitui cirurgia quando há indicação, mas pode adiar ou evitar em casos selecionados.</p>
+        <p>Envolve o uso de PRP (plasma rico em plaquetas) e outros ortobiológicos aplicados em articulações e tendões para estimular processos naturais de reparo. A indicação depende do diagnóstico e das expectativas realistas do tratamento. Não substitui cirurgia quando há indicação, mas pode adiar ou evitar em casos selecionados.</p>
       </details>
       <details>
         <summary>Vocês aceitam convênio?</summary>
-        <p>Sim. A cobertura varia por unidade e plano; a lista completa está na seção Convênios. A confirmação é feita pelo WhatsApp antes do agendamento — informe seu convênio e a unidade escolhida para receber o retorno.</p>
+        <p>Sim. A cobertura varia por unidade e plano; a lista completa está na seção Convênios. A confirmação é feita pelo WhatsApp antes do agendamento. Informe seu convênio e a unidade escolhida para receber o retorno.</p>
       </details>
       <details>
         <summary>Qual a diferença entre ortopedista geral e cirurgião do joelho?</summary>
@@ -853,13 +857,13 @@
       <div class="footer-addr">
         <h4>Unidades</h4>
         <ul>
-          <li>Neurospine — Asa Norte, Brasília — DF.</li>
-          <li>JK Ortopedia — em frente ao Shopping JK, Taguatinga Norte, Brasília — DF.</li>
+          <li>Neurospine, Asa Norte, Brasília, DF.</li>
+          <li>JK Ortopedia, em frente ao Shopping JK, Taguatinga Norte, Brasília, DF.</li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Dr. Rodrigo Pires — CRM/DF 22900 — RQE 18477</span>
+      <span>© 2026 Dr. Rodrigo Pires · CRM/DF 22900 · RQE 18477</span>
       <span>
         <a href="#politica">Política de Privacidade</a> &nbsp;·&nbsp;
         Desenvolvido por Pulso Marketing Médico
