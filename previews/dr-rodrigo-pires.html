@@ -303,24 +303,24 @@
     }
     .proof-item .kicker { text-align: center; margin-bottom: 6px; }
     .proof-item strong { display: block; text-align: center; font-weight: 700; font-size: 15px; line-height: 1.4; color: var(--ink); }
-    .proof-item:nth-child(1) .proof-icon { border: 2px solid #10b981; }
-    .proof-item:nth-child(2) .proof-icon { border: 2px solid #e11d48; }
-    .proof-item:nth-child(3) .proof-icon { border: 2px solid #d97706; }
-    .proof-item:nth-child(4) .proof-icon { border: 2px solid #4f46e5; }
     .proof-item .proof-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: block;
       width: 52px;
       height: 52px;
-      border-radius: 14px;
-      overflow: hidden;
       margin: 0 auto 14px auto;
-      box-shadow: 0 4px 12px rgba(33, 46, 81, 0.08);
+      background: none;
+      border: none;
+      box-shadow: none;
     }
-    .proof-item .proof-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .proof-item .proof-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 4px 10px rgba(33, 46, 81, 0.12));
+    }
 
-    /* Quando procurar — Formato 1: Cards arredondados com topo colorido e ilustrações 3D */
+    /* Quando procurar — Formato 1: Cards arredondados com ilustrações 3D limpas */
     .qp-cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -338,33 +338,27 @@
       box-shadow: 0 6px 20px rgba(33, 46, 81, 0.04);
       transition: all 0.25s ease;
     }
-    .qp-cards .card:nth-child(1) { border-top: 4px solid #e11d48; }
-    .qp-cards .card:nth-child(1) .card-icon { border: 2px solid #e11d48; }
-    .qp-cards .card:nth-child(2) { border-top: 4px solid #ea580c; }
-    .qp-cards .card:nth-child(2) .card-icon { border: 2px solid #ea580c; }
-    .qp-cards .card:nth-child(3) { border-top: 4px solid #6366f1; }
-    .qp-cards .card:nth-child(3) .card-icon { border: 2px solid #6366f1; }
-    .qp-cards .card:nth-child(4) { border-top: 4px solid #10b981; }
-    .qp-cards .card:nth-child(4) .card-icon { border: 2px solid #10b981; }
-    .qp-cards .card:nth-child(5) { border-top: 4px solid #0284c7; }
-    .qp-cards .card:nth-child(5) .card-icon { border: 2px solid #0284c7; }
-
     .qp-cards .card:hover {
       transform: translateY(-4px);
       box-shadow: 0 14px 32px rgba(33, 46, 81, 0.09);
+      border-color: var(--gold-strong);
     }
     .qp-cards .card .card-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 64px;
-      height: 64px;
-      border-radius: 18px;
-      overflow: hidden;
-      margin: 0 auto 20px auto;
-      box-shadow: 0 6px 16px rgba(33, 46, 81, 0.1);
+      display: block;
+      width: 68px;
+      height: 68px;
+      margin: 0 auto 18px auto;
+      background: none;
+      border: none;
+      box-shadow: none;
     }
-    .qp-cards .card .card-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .qp-cards .card .card-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 6px 14px rgba(33, 46, 81, 0.12));
+    }
     .qp-cards .card h3 { text-align: center; margin-bottom: 10px; font-size: 18px; color: var(--ink); }
     .qp-cards .card p { text-align: center; margin: 0; font-size: 15px; color: var(--ink-soft); line-height: 1.55; }
 
@@ -423,7 +417,7 @@
     .step h3 { text-align: center; margin-top: 10px; margin-bottom: 10px; color: var(--white); font-size: 18px; }
     .step p { text-align: center; margin: 0; color: rgba(255,255,255,0.78); font-size: 15px; line-height: 1.55; }
 
-    /* Serviços — Formato 3: Cards com ilustrações 3D em crachás moldurados */
+    /* Serviços — Formato 3: Cards com ilustrações 3D limpas e flutuantes */
     #servicos .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -441,31 +435,28 @@
       box-shadow: 0 4px 16px rgba(33, 46, 81, 0.03);
       transition: all 0.3s ease;
     }
-    #servicos .card:nth-child(1) .card-icon { border: 2px solid #38bdf8; box-shadow: 0 6px 16px rgba(56, 189, 248, 0.22); }
-    #servicos .card:nth-child(2) .card-icon { border: 2px solid #2dd4bf; box-shadow: 0 6px 16px rgba(45, 212, 191, 0.22); }
-    #servicos .card:nth-child(3) .card-icon { border: 2px solid #fb7185; box-shadow: 0 6px 16px rgba(251, 113, 133, 0.22); }
-    #servicos .card:nth-child(4) .card-icon { border: 2px solid #c084fc; box-shadow: 0 6px 16px rgba(192, 132, 252, 0.22); }
-    #servicos .card:nth-child(5) .card-icon { border: 2px solid #fbbf24; box-shadow: 0 6px 16px rgba(251, 191, 36, 0.22); }
-    #servicos .card:nth-child(6) .card-icon { border: 2px solid #34d399; box-shadow: 0 6px 16px rgba(52, 211, 153, 0.22); }
-
-    #servicos .card:nth-child(1):hover { border-color: #38bdf8; background: var(--white); transform: translateY(-4px); box-shadow: 0 14px 30px rgba(56, 189, 248, 0.12); }
-    #servicos .card:nth-child(2):hover { border-color: #2dd4bf; background: var(--white); transform: translateY(-4px); box-shadow: 0 14px 30px rgba(45, 212, 191, 0.12); }
-    #servicos .card:nth-child(3):hover { border-color: #fb7185; background: var(--white); transform: translateY(-4px); box-shadow: 0 14px 30px rgba(251, 113, 133, 0.12); }
-    #servicos .card:nth-child(4):hover { border-color: #c084fc; background: var(--white); transform: translateY(-4px); box-shadow: 0 14px 30px rgba(192, 132, 252, 0.12); }
-    #servicos .card:nth-child(5):hover { border-color: #fbbf24; background: var(--white); transform: translateY(-4px); box-shadow: 0 14px 30px rgba(251, 191, 36, 0.12); }
-    #servicos .card:nth-child(6):hover { border-color: #34d399; background: var(--white); transform: translateY(-4px); box-shadow: 0 14px 30px rgba(52, 211, 153, 0.12); }
-
-    #servicos .card .card-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 64px;
-      height: 64px;
-      border-radius: 18px;
-      overflow: hidden;
-      margin: 0 auto 20px auto;
+    #servicos .card:hover {
+      background: var(--white);
+      border-color: var(--gold-strong);
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(33, 46, 81, 0.09);
     }
-    #servicos .card .card-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    #servicos .card .card-icon {
+      display: block;
+      width: 68px;
+      height: 68px;
+      margin: 0 auto 20px auto;
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
+    #servicos .card .card-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 6px 14px rgba(33, 46, 81, 0.12));
+    }
     #servicos .card h3 { text-align: center; margin-bottom: 10px; font-size: 18px; color: var(--ink); }
     #servicos .card p { text-align: center; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
 
