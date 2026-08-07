@@ -26,7 +26,7 @@ Checklists tornam a revisao repetivel. Eles nao substituem julgamento, mas imped
 - Referencias do repertorio foram citadas por ID no mapa visual.
 - Layout simples foi escolha estrategica, nao preenchimento automatico.
 - Imagens e icones possuem funcao.
-- Retrato do medico aparece uma unica vez na pagina (hero); autoridade usa foto de consultorio/procedimento ou vira so-texto — ver `docs/uso-de-fotos.md`.
+- Nenhuma foto se repete na pagina. Duas fotos diferentes do medico e ok; a mesma foto duas vezes nao — ver `docs/uso-de-fotos.md`.
 - Cada icone de card foi renderizado e OLHADO a 32px antes de ser aprovado (contact sheet), nao escolhido pelo nome.
 - Cada icone tem linha no `mapa-icones.md`, com o que o desenho mostra e a marcacao de conferido.
 - Nenhum icone repetido em dois cards da mesma pagina; card da pagina X so usa arquivo de `topic-icons/X/`.
