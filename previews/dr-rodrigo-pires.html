@@ -122,6 +122,45 @@
     .btn.outline:hover { background: var(--accent-soft); }
     .btn .wa-icon { width: 18px; height: 18px; flex: none; }
 
+    /* Animações sutis e dinamismo */
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    .card-icon img, .proof-icon img {
+      animation: floatSlow 5s ease-in-out infinite;
+    }
+    .proof-item:nth-child(2) .proof-icon img,
+    .qp-cards .card:nth-child(2) .card-icon img,
+    #servicos .card:nth-child(2) .card-icon img {
+      animation-delay: 1.2s;
+    }
+    .proof-item:nth-child(3) .proof-icon img,
+    .qp-cards .card:nth-child(3) .card-icon img,
+    #servicos .card:nth-child(3) .card-icon img {
+      animation-delay: 2.4s;
+    }
+
+    @keyframes pulseCta {
+      0%, 100% { box-shadow: 0 4px 14px rgba(33, 46, 81, 0.22); }
+      50% { box-shadow: 0 6px 20px rgba(33, 46, 81, 0.40); }
+    }
+    .hero .btn.primary, .final .btn.primary {
+      animation: pulseCta 3.5s ease-in-out infinite;
+    }
+
+    /* Reveal no Scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     /* Header sticky */
     header {
       position: sticky;
@@ -1165,6 +1204,31 @@
     }
     window.addEventListener('DOMContentLoaded', function() {
       window.scrollTo(0, 0);
+
+      // Scroll Reveal Observer
+      var revealElements = document.querySelectorAll('.card, .step, .proof-item, .authority, .location, .section-head');
+      revealElements.forEach(function(el) {
+        el.classList.add('reveal');
+      });
+
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08 });
+
+        revealElements.forEach(function(el) {
+          observer.observe(el);
+        });
+      } else {
+        revealElements.forEach(function(el) {
+          el.classList.add('active');
+        });
+      }
     });
     window.addEventListener('load', function() {
       window.scrollTo(0, 0);
