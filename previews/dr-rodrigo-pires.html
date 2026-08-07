@@ -146,14 +146,18 @@
     .hero::before {
       content: "";
       position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 88% 20%, rgba(212, 181, 137, 0.20) 0%, transparent 45%),
-        radial-gradient(circle at 8% 92%, rgba(33, 46, 81, 0.05) 0%, transparent 50%);
-      pointer-events: none;
+      inset: -16px;
+      background-image: url('img/bg-consultorio.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: blur(10px);
+      opacity: 0.22;
+      z-index: 0;
+      transform: scale(1.06);
     }
     .hero-inner {
       position: relative;
+      z-index: 1;
       width: var(--container);
       margin-inline: auto;
       padding: 40px 0 72px;
@@ -566,6 +570,27 @@
     }
 
     /* Localizacao */
+    .section-locais-bg {
+      position: relative;
+      overflow: hidden;
+      background: var(--paper);
+    }
+    .section-locais-bg::before {
+      content: "";
+      position: absolute;
+      inset: -16px;
+      background-image: url('img/bg-mapa-satelite.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: blur(8px);
+      opacity: 0.18;
+      z-index: 0;
+      transform: scale(1.06);
+    }
+    .section-locais-bg > .section-inner {
+      position: relative;
+      z-index: 1;
+    }
     .locations { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 900px; margin-inline: auto; }
     .location {
       background: var(--white);
@@ -981,7 +1006,8 @@
       </div>
     </div>
 
-    <section id="locais" class="section">
+    <section id="locais" class="section section-fullbg section-locais-bg">
+      <div class="section-inner" style="padding: var(--section-py) 0;">
       <div class="section-head section-head--center">
         <div>
           <p class="kicker">Locais de atendimento</p>
@@ -1018,6 +1044,7 @@
             title="Mapa da unidade JK Ortopedia, Taguatinga Norte"
           ></iframe>
         </article>
+      </div>
       </div>
     </section>
 
