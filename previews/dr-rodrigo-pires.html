@@ -68,8 +68,8 @@
       -webkit-font-smoothing: antialiased;
     }
     h1, h2, h3, p { margin-top: 0; }
-    h1 { font-size: var(--fs-h1); line-height: 1.08; letter-spacing: -0.01em; margin-bottom: 20px; text-transform: capitalize; color: var(--navy); }
-    h2 { font-size: var(--fs-h2); line-height: 1.15; letter-spacing: -0.005em; margin-bottom: 14px; text-transform: capitalize; color: var(--navy); }
+    h1 { font-size: var(--fs-h1); line-height: 1.08; letter-spacing: -0.01em; margin-bottom: 20px; color: var(--navy); }
+    h2 { font-size: var(--fs-h2); line-height: 1.15; letter-spacing: -0.005em; margin-bottom: 14px; color: var(--navy); }
     h3 { font-size: var(--fs-h3); line-height: 1.3; margin-bottom: 10px; color: var(--navy); }
     a { color: inherit; text-decoration: none; }
 
@@ -140,8 +140,7 @@
     .hero {
       position: relative;
       color: var(--navy);
-      background:
-        radial-gradient(ellipse 80% 70% at 78% 45%, #d4b994 0%, #c4a685 45%, #a88968 100%);
+      background: linear-gradient(180deg, var(--paper) 0%, var(--paper-deep) 100%);
       overflow: hidden;
     }
     .hero::before {
@@ -149,8 +148,8 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 88% 20%, rgba(255, 240, 210, 0.25) 0%, transparent 45%),
-        radial-gradient(circle at 8% 92%, rgba(33, 46, 81, 0.06) 0%, transparent 50%);
+        radial-gradient(circle at 88% 20%, rgba(212, 181, 137, 0.20) 0%, transparent 45%),
+        radial-gradient(circle at 8% 92%, rgba(33, 46, 81, 0.05) 0%, transparent 50%);
       pointer-events: none;
     }
     .hero-inner {
@@ -274,25 +273,48 @@
     .qp-cards .card p { font-size: 16px; color: var(--ink-soft); }
 
     /* Steps */
-    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .steps {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      padding-top: 44px;
+    }
+    .steps::before {
+      content: "";
+      position: absolute;
+      top: 14px;
+      left: 16.66%;
+      right: 16.66%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold-strong) 0%, var(--gold) 50%, var(--gold-strong) 100%);
+      opacity: 0.55;
+    }
     .step {
+      position: relative;
       padding: 28px;
       background: var(--white);
       border: 1px solid var(--line);
       border-radius: var(--radius);
     }
-    .step-num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
+    .step .step-dot {
+      position: absolute;
+      top: -44px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30px;
+      height: 30px;
       border-radius: 999px;
-      background: var(--navy);
-      color: var(--gold);
-      font-weight: 700;
-      font-size: 13px;
-      margin-bottom: 18px;
+      background: var(--white);
+      border: 2px solid var(--gold-strong);
+      box-shadow: 0 0 0 4px var(--paper);
+    }
+    .step .step-dot::before {
+      content: "";
+      position: absolute;
+      inset: 5px;
+      border-radius: 999px;
+      background: var(--gold-strong);
     }
     .step p { margin: 8px 0 0; color: var(--muted); font-size: 15px; }
 
@@ -317,32 +339,50 @@
       object-position: center top;
       display: block;
     }
-    .authority-body ul {
-      list-style: none;
-      padding: 0;
-      margin: 22px 0 0;
+    .authority-cats {
       display: grid;
-      gap: 12px;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: 24px;
     }
-    .authority-body ul li {
-      padding: 14px 18px;
+    .authority-cat {
       background: var(--white);
       border: 1px solid var(--line);
       border-radius: var(--radius);
+      padding: 20px 22px;
+    }
+    .authority-cat .cat-label {
+      display: block;
+      color: var(--gold-strong);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .authority-cat ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 8px;
+    }
+    .authority-cat ul li {
       font-size: 15px;
       line-height: 1.5;
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
+      color: var(--ink);
+      padding-left: 16px;
+      position: relative;
     }
-    .authority-body ul li strong { color: var(--ink); font-weight: 700; }
-    .authority-body ul li::before {
-      content: "·";
-      color: var(--gold-strong);
-      font-weight: 800;
-      font-size: 22px;
-      line-height: 1;
-      margin-top: -2px;
+    .authority-cat ul li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold-strong);
     }
 
     /* Convenios */
@@ -379,18 +419,26 @@
     }
 
     /* Localizacao */
-    .locations { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .locations { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 900px; margin-inline: auto; }
     .location {
-      padding: 24px;
       background: var(--white);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       display: flex;
       flex-direction: column;
+      overflow: hidden;
     }
+    .location .location-body { padding: 22px 24px 20px; }
     .location .region { font-weight: 700; font-size: 12px; letter-spacing: 0.12em; color: var(--gold-strong); text-transform: uppercase; margin: 0 0 6px; }
     .location h3 { margin-bottom: 8px; }
     .location p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+    .location .location-map {
+      border: 0;
+      border-top: 1px solid var(--line);
+      width: 100%;
+      height: 200px;
+      display: block;
+    }
     .location .todo {
       display: inline-block;
       margin-top: auto;
@@ -643,17 +691,17 @@
       </div>
       <div class="steps" style="max-width: 1120px; margin-inline: auto;">
         <article class="step">
-          <span class="step-num">01</span>
+          <span class="step-dot" aria-hidden="true"></span>
           <h3>Avaliação individual</h3>
           <p>Histórico, exame físico direcionado, revisão de exames e objetivos reais antes de qualquer conduta.</p>
         </article>
         <article class="step">
-          <span class="step-num">02</span>
+          <span class="step-dot" aria-hidden="true"></span>
           <h3>Diagnóstico com clareza</h3>
           <p>Quando necessário, ultrassonografia musculoesquelética na própria consulta. Cada etapa é explicada.</p>
         </article>
         <article class="step">
-          <span class="step-num">03</span>
+          <span class="step-dot" aria-hidden="true"></span>
           <h3>Conduta por etapas</h3>
           <p>Conservador primeiro. Procedimento intervencionista quando há indicação. Cirurgia do joelho quando o quadro pede, nunca o inverso.</p>
         </article>
@@ -709,18 +757,33 @@
         </div>
         <div class="authority-body">
           <p class="kicker">Sobre o médico</p>
-          <h2>Dr. Rodrigo Nunes de Albuquerque Pires</h2>
+          <h2>Dr. Rodrigo Nunes Pires de Albuquerque</h2>
           <p style="color: var(--muted); margin-bottom: 4px;">CRM/DF 22900 · RQE 18477 · TEOT 17060</p>
           <p style="color: var(--ink);">Ortopedista e traumatologista com atuação em cirurgia do joelho, procedimentos intervencionistas para dor e medicina esportiva.</p>
-          <ul>
-            <li><strong>Título de Especialista em Cirurgia do Joelho, SBCJ (2023).</strong></li>
-            <li><strong>Residência em Ortopedia e Traumatologia, HFA/SBOT (2020).</strong></li>
-            <li><strong>Pós-graduação em Medicina Intervencionista da Dor, ITC-Brasília / Instituto Vanguard (2025).</strong></li>
-            <li><strong>Pós-graduação em Ultrassonografia Musculoesquelética e Intervenção, APM (2025).</strong></li>
-            <li><strong>Pós-graduação em Medicina Esportiva, APM (em curso).</strong></li>
-            <li><strong>Hospital de Base do DF, HBDF (desde 2022).</strong></li>
-            <li><strong>Ceilândia Esporte Clube (desde 2025).</strong></li>
-          </ul>
+          <div class="authority-cats">
+            <div class="authority-cat">
+              <span class="cat-label">Formação</span>
+              <ul>
+                <li>Residência em Ortopedia e Traumatologia, HFA/SBOT.</li>
+                <li>Título de Especialista em Cirurgia do Joelho, SBCJ.</li>
+              </ul>
+            </div>
+            <div class="authority-cat">
+              <span class="cat-label">Especializações complementares</span>
+              <ul>
+                <li>Medicina Intervencionista da Dor, ITC-Brasília / Instituto Vanguard.</li>
+                <li>Ultrassonografia Musculoesquelética e Intervenção, APM.</li>
+                <li>Medicina Esportiva, APM.</li>
+              </ul>
+            </div>
+            <div class="authority-cat">
+              <span class="cat-label">Atuação</span>
+              <ul>
+                <li>Hospital de Base do DF, HBDF.</li>
+                <li>Ceilândia Esporte Clube.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -777,16 +840,32 @@
       </div>
       <div class="locations">
         <article class="location">
-          <p class="region">Asa Norte</p>
-          <h3>Neurospine</h3>
-          <p>Instituto de Neurocirurgia, Asa Norte, Brasília, DF.</p>
-          <span class="todo"><span>Endereço completo a validar</span></span>
+          <div class="location-body">
+            <p class="region">Asa Norte</p>
+            <h3>Neurospine</h3>
+            <p>Instituto de Neurocirurgia, SGAN 605, Conjunto A, Asa Norte, Brasília, DF.</p>
+          </div>
+          <iframe
+            class="location-map"
+            src="https://www.google.com/maps?q=Neurospine+Instituto+de+Neurocirurgia+Bras%C3%ADlia+Asa+Norte&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa da unidade Neurospine, Asa Norte"
+          ></iframe>
         </article>
         <article class="location">
-          <p class="region">Taguatinga Norte</p>
-          <h3>JK Ortopedia</h3>
-          <p>Em frente ao Shopping JK, Taguatinga Norte, Brasília, DF.</p>
-          <span class="todo"><span>Endereço completo a validar</span></span>
+          <div class="location-body">
+            <p class="region">Taguatinga Norte</p>
+            <h3>JK Ortopedia</h3>
+            <p>Em frente ao Shopping JK, Avenida Comercial Norte, Taguatinga Norte, Brasília, DF.</p>
+          </div>
+          <iframe
+            class="location-map"
+            src="https://www.google.com/maps?q=JK+Ortopedia+Taguatinga+Norte+Bras%C3%ADlia&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa da unidade JK Ortopedia, Taguatinga Norte"
+          ></iframe>
         </article>
       </div>
     </section>
