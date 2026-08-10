@@ -2,9 +2,9 @@
 
 ## 0. Carregar contexto
 
-Antes de produzir, colete o briefing e leia as especificacoes aplicaveis. O minimo necessario e: oferta, publico, problema, diferenciais verificaveis, canal de trafego, acao primaria, dados de contato, ativos disponiveis e restricoes do setor.
+Antes de produzir, colete o briefing e leia as especificacoes aplicaveis. O minimo necessario e: oferta, publico, problema, diferenciais verificaveis, canal de trafego, acao primaria, dados de contato, ativos disponiveis e restricoes do setor. Para paginas que tratem dados ou carreguem tracking, registrar tambem: controlador, canal de privacidade, destino do CTA, tecnologias de medicao/publicidade e URL da politica aplicavel (ver [privacidade e consentimento](privacidade-e-consentimento.md)).
 
-**Gate:** se um dado bloqueante nao existe, marque-o como `[A VALIDAR]`. Nao invente depoimentos, numeros, credenciais, precos ou promessas.
+**Gate:** se um dado bloqueante nao existe, marque-o como `[A VALIDAR]`. Nao invente depoimentos, numeros, credenciais, precos, promessas ou responsaveis pelo tratamento de dados.
 
 ## 1. Diagnostico e estrategia
 
@@ -74,7 +74,7 @@ Sem isso, o repertorio vira o unico input estetico e todas as LPs comecam a pare
 
 Implemente a pagina com responsividade, acessibilidade, performance e eventos de conversao. Verifique a interface em telas menores, o estado dos formularios, os links e o comportamento do CTA.
 
-**Gate:** a pagina funciona sem depender de animacao, imagem decorativa ou um unico tamanho de viewport.
+**Gate:** a pagina funciona sem depender de animacao, imagem decorativa ou um unico tamanho de viewport. Se houver tratamento de dados, o controlador, a politica e as preferencias de consentimento estao acessiveis e testados.
 
 ## 6. Auditoria
 

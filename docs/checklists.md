@@ -40,6 +40,10 @@ Checklists tornam a revisao repetivel. Eles nao substituem julgamento, mas imped
 
 - Formularios, links e CTAs foram testados.
 - Eventos de conversao foram configurados e validados.
+- O briefing identifica o controlador, o canal de privacidade e a politica aplicavel.
+- A politica nao atribui automaticamente a Pulso o papel de controlador: a funcao de cada parte foi validada para o projeto.
+- Se houver uma politica central da Pulso, a LP tambem identifica claramente o controlador do atendimento e fornece acesso ao aviso complementar do cliente quando necessario.
+- O banner de cookies separa itens essenciais de medicao/publicidade e permite revisar a escolha.
 - Imagens e fontes nao prejudicam o carregamento inicial.
 - HTML possui estrutura semantica, idioma, viewport e alternativas de texto quando aplicavel.
 - Responsividade e navegacao por teclado foram revisadas.

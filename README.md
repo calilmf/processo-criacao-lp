@@ -10,7 +10,8 @@ Um processo documentado para criar Landing Pages com estrategia, copy, design, i
 4. Use os [templates](#templates) para registrar as decisoes do projeto.
 5. Comece qualquer LP a partir de [`assets/tokens.css`](assets/tokens.css) — paleta, tipografia e escala base.
 6. Consulte o [sistema de repertorio visual](docs/repertorio-visual.md) antes de desenhar.
-7. Rode os [checklists](docs/checklists.md) antes de entregar.
+7. Defina o controlador, o canal de privacidade e o consentimento seguindo o [padrao de privacidade e consentimento](docs/privacidade-e-consentimento.md).
+8. Rode os [checklists](docs/checklists.md) antes de entregar.
 
 ## O principio
 
@@ -39,6 +40,10 @@ Cada seta representa uma decisao que precisa estar clara antes da proxima. Isso 
 - [Mapa visual](templates/visual-map.md)
 - [Mapa de icones](templates/mapa-icones.md) — quando a pagina usa icones por card
 - [Checklist de entrega](templates/checklist-entrega.md)
+
+## Privacidade e consentimento
+
+Nao trate a politica de privacidade como um link generico de rodape. Antes de publicar, identifique quem e o controlador dos dados do projeto, qual e o canal para titulares e quais tecnologias de medicao ou publicidade serao carregadas. O padrao completo esta em [Privacidade e consentimento](docs/privacidade-e-consentimento.md).
 
 ## Como contribuir
 

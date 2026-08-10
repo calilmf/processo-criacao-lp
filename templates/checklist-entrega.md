@@ -16,6 +16,9 @@
 
 - [ ] Formularios, links e CTAs foram testados.
 - [ ] Eventos de conversao foram validados.
+- [ ] Controlador, canal de privacidade e URL da politica foram confirmados com o cliente.
+- [ ] A politica explica tecnologias de tracking e como revisar preferencias, quando aplicavel.
+- [ ] Banner de cookies e Consent Mode foram testados antes do primeiro pageview, quando houver Ads ou tags.
 - [ ] Performance, acessibilidade e metadados foram revisados.
 
 ## Pendencias
