@@ -40,5 +40,7 @@ Este repo documenta o processo para criar Landing Pages. Se voce foi invocado pa
 - Nao copiar uma referencia inteira — o repertorio orienta composicao, ritmo, tipografia e densidade; nao clona layout.
 - Nao entregar apenas HTML sem os artefatos de decisao (briefing, wireframe, mapa visual, mapa de icones quando aplicavel, checklist preenchidos).
 - Nao escolher icone pelo nome. Renderizar e olhar a 32px e obrigatorio — `joints-outline` desenha um joelho, `cervical` retorna colo do utero.
+- Nao usar icone de significado generico/fora do setor so porque "da pra entender" (balanca de tribunal pra instabilidade, cadeado de UI pra travamento, relogio/sol pra manha, cursor de clique pra estalo). Card de saude usa pictograma que ilustra a acao/sintoma de verdade — figura humana caindo pra instabilidade, figura deitada na cama pra dor ao dormir, etc. Se a busca so devolve icone de UI/produto pro termo, buscar sinonimo mais concreto antes de aceitar.
+- Nao repetir o mesmo icone dentro da mesma pagina (todos os cards de sintomas + causas daquela pagina, nao so dentro de uma secao). Se dois conceitos sao visualmente parecidos (ex.: duas variacoes de "coluna" ou "disco"), usar variantes de sets diferentes (solido vs contorno, ou sets distintos) — nunca a mesma string de icone duas vezes na mesma pagina.
 - Nao mover regra obrigatoria para dentro de texto de referencia estetica.
 - Nao substituir o token base por preferencia estetica sem justificativa.
