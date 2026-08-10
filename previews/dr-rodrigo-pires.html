@@ -14,6 +14,34 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <link rel="preload" as="image" href="img/dr-rodrigo-pires-nobg.webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="img/bg-consultorio-1600.webp" fetchpriority="high" />
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'granted',
+      personalization_storage: 'denied',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    try {
+      var savedConsent = localStorage.getItem('dr_rodrigo_pires_consent_v1');
+      if (savedConsent) gtag('consent', 'update', JSON.parse(savedConsent));
+    } catch (error) {}
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P8G6999S');</script>
+  <!-- End Google Tag Manager -->
 
   <style>
     /* Tokens derivados da identidade visual de drrodrigopires.com.br
@@ -30,7 +58,7 @@
       --navy-dark: #1a2440;
       --gold: #d4b589;
       --gold-soft: rgba(212, 181, 137, 0.14);
-      --gold-strong: #b89762;
+      --gold-strong: #806331;
       --wa-green: #25d366;
       --line: rgba(33, 46, 81, 0.12);
       --line-soft: rgba(33, 46, 81, 0.06);
@@ -200,7 +228,7 @@
       content: "";
       position: absolute;
       inset: -16px;
-      background-image: url('img/bg-consultorio.jpg');
+      background-image: url('img/bg-consultorio-1600.webp');
       background-size: cover;
       background-position: center;
       filter: blur(6px);
@@ -738,11 +766,11 @@
       grid-template-columns: 1fr 1fr;
       gap: 32px;
     }
-    .footer-brand p { margin: 3px 0; font-size: 13.5px; color: var(--muted); }
+    .footer-brand p { margin: 3px 0; font-size: 13.5px; color: var(--ink-soft); }
     .footer-brand .brand-name { color: var(--navy); }
-    .footer-addr h4 { margin: 0 0 10px; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-strong); }
+    .footer-title { margin: 0 0 10px; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); }
     .footer-addr ul { list-style: none; padding: 0; margin: 0; }
-    .footer-addr li { font-size: 13px; color: var(--muted); margin-bottom: 8px; line-height: 1.45; }
+    .footer-addr li { font-size: 13px; color: var(--ink-soft); margin-bottom: 8px; line-height: 1.45; }
     .footer-bottom {
       width: var(--container);
       margin: 20px auto 0;
@@ -753,9 +781,9 @@
       flex-wrap: wrap;
       gap: 12px;
       font-size: 12px;
-      color: var(--muted);
+      color: var(--ink-soft);
     }
-    .footer-bottom a { color: var(--muted); text-decoration: none; }
+    .footer-bottom a { color: var(--ink-soft); text-decoration: none; }
     .footer-bottom a:hover { color: var(--gold-strong); text-decoration: underline; }
 
     /* Aviso de preview */
@@ -769,6 +797,45 @@
       letter-spacing: 0.04em;
     }
     .preview-banner strong { color: var(--gold); text-transform: uppercase; letter-spacing: 0.12em; margin-right: 10px; }
+
+    /* Consentimento LGPD */
+    .consent-banner {
+      position: fixed;
+      z-index: 100;
+      right: 20px;
+      bottom: 20px;
+      left: 20px;
+      max-width: 760px;
+      margin-inline: auto;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      color: var(--white);
+      background: var(--navy-dark);
+      border: 1px solid rgba(212, 181, 137, 0.38);
+      border-radius: var(--radius);
+      box-shadow: 0 16px 40px rgba(26, 36, 64, 0.28);
+    }
+    .consent-banner[hidden] { display: none; }
+    .consent-copy { max-width: 460px; }
+    .consent-copy strong { display: block; margin-bottom: 4px; font-size: 14px; }
+    .consent-copy p { margin: 0; color: rgba(255,255,255,0.78); font-size: 12px; line-height: 1.5; }
+    .consent-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+    .consent-actions button {
+      min-height: 42px;
+      padding: 0 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.62);
+      font: inherit;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .consent-essential { color: var(--white); background: transparent; }
+    .consent-accept { color: var(--navy-dark); background: var(--gold); border-color: var(--gold) !important; }
+    .consent-actions button:focus-visible { outline: 3px solid var(--white); outline-offset: 3px; }
 
     /* Responsivo */
     @media (max-width: 960px) {
@@ -786,6 +853,8 @@
       .final { padding: 56px 20px; margin-top: 48px; }
       .footer-inner { grid-template-columns: 1fr; gap: 28px; }
       .footer-bottom { flex-direction: column; }
+      .consent-banner { align-items: flex-start; flex-direction: column; }
+      .consent-actions { width: 100%; justify-content: flex-start; }
     }
 
     @media (max-width: 640px) {
@@ -810,15 +879,32 @@
       .hero-actions .btn { width: 100%; justify-content: center; }
       .convenios-list { grid-template-columns: repeat(2, 1fr); }
       .brand img { height: 46px; }
+      .consent-banner { right: 12px; bottom: 12px; left: 12px; padding: 16px; }
+      .consent-actions button { flex: 1 1 100%; width: 100%; }
     }
   </style>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8G6999S"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <section id="consent-banner" class="consent-banner" aria-labelledby="consent-title" role="region">
+    <div class="consent-copy">
+      <strong id="consent-title">Sua privacidade</strong>
+      <p>Usamos cookies essenciais para o funcionamento da página. Com sua autorização, também usamos cookies de medição e publicidade para melhorar a comunicação.</p>
+    </div>
+    <div class="consent-actions">
+      <button class="consent-essential" type="button" data-consent-choice="essential">Usar apenas essenciais</button>
+      <button class="consent-accept" type="button" data-consent-choice="all">Aceitar todos</button>
+    </div>
+  </section>
 
   <header id="topo">
     <div class="header-inner">
       <a class="brand" href="#topo" aria-label="Dr. Rodrigo Pires · Ortopedia e Medicina da Dor">
-        <img src="img/logo-rodrigo-pires.png" alt="Dr. Rodrigo Pires · Ortopedia e Medicina da Dor" />
+        <img src="img/logo-rodrigo-pires-250.webp" width="250" height="136" alt="Dr. Rodrigo Pires · Ortopedia e Medicina da Dor" />
       </a>
       <nav>
         <a href="#quando">Quando procurar</a>
@@ -854,7 +940,7 @@
           </div>
         </div>
         <div class="hero-media">
-          <img src="img/dr-rodrigo-pires-nobg.webp" alt="Retrato profissional do Dr. Rodrigo Pires" loading="eager" fetchpriority="high" />
+          <img src="img/dr-rodrigo-pires-nobg.webp" alt="Retrato profissional do Dr. Rodrigo Pires" width="683" height="1024" loading="eager" fetchpriority="high" />
         </div>
       </div>
     </section>
@@ -862,22 +948,22 @@
     <div class="proof-band">
       <div class="proof-inner">
         <div class="proof-item">
-          <span class="proof-icon" aria-hidden="true"><img src="img/3d-icons/icon_convenios.png" alt="" /></span>
+          <span class="proof-icon" aria-hidden="true"><img src="img/3d-icons/icon_convenios-160.webp" width="160" height="160" alt="" /></span>
           <p class="kicker">Convênios</p>
           <strong>+40 convênios atendidos.</strong>
         </div>
         <div class="proof-item">
-          <span class="proof-icon" aria-hidden="true"><img src="img/3d-icons/icon_localizacao.png" alt="" /></span>
+          <span class="proof-icon" aria-hidden="true"><img src="img/3d-icons/icon_localizacao-160.webp" width="160" height="160" alt="" /></span>
           <p class="kicker">Localização</p>
           <strong>Asa Norte e Taguatinga.</strong>
         </div>
         <div class="proof-item">
-          <span class="proof-icon" aria-hidden="true"><img src="img/3d-icons/icon_experiencia.png" alt="" /></span>
+          <span class="proof-icon" aria-hidden="true"><img src="img/3d-icons/icon_experiencia-160.webp" width="160" height="160" alt="" /></span>
           <p class="kicker">Experiência</p>
           <strong>+15 anos de experiência.</strong>
         </div>
         <div class="proof-item">
-          <span class="proof-icon" aria-hidden="true"><img src="img/3d-icons/icon_formacao.png" alt="" /></span>
+          <span class="proof-icon" aria-hidden="true"><img src="img/3d-icons/icon_formacao-160.webp" width="160" height="160" alt="" /></span>
           <p class="kicker">Formação</p>
           <strong>Especializações complementares.</strong>
         </div>
@@ -894,27 +980,27 @@
       </div>
       <div class="cards qp-cards">
         <article class="card">
-          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_dor_persistente.png" alt="" /></span>
+          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_dor_persistente-160.webp" width="160" height="160" alt="" /></span>
           <h3>Dor articular persistente</h3>
           <p>Joelho, ombro, quadril ou coluna com dor que não passa ou piora com o movimento.</p>
         </article>
         <article class="card">
-          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_limitacao_atividades.png" alt="" /></span>
+          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_limitacao_atividades-160.webp" width="160" height="160" alt="" /></span>
           <h3>Limitação no dia a dia</h3>
           <p>Dificuldade para caminhar, treinar, trabalhar ou dormir bem por causa da dor.</p>
         </article>
         <article class="card">
-          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_duvida_conduta.png" alt="" /></span>
+          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_duvida_conduta-160.webp" width="160" height="160" alt="" /></span>
           <h3>Dúvida de conduta</h3>
           <p>Entre continuar tratamento conservador, fazer procedimento ou considerar cirurgia.</p>
         </article>
         <article class="card">
-          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_retorno_esporte.png" alt="" /></span>
+          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_retorno_esporte-160.webp" width="160" height="160" alt="" /></span>
           <h3>Retorno ao esporte</h3>
           <p>Após lesão ou cirurgia, com plano de reabilitação até a atividade completa.</p>
         </article>
         <article class="card">
-          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_segunda_opiniao.png" alt="" /></span>
+          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_segunda_opiniao-160.webp" width="160" height="160" alt="" /></span>
           <h3>Segunda opinião ortopédica</h3>
           <p>Antes de decidir uma intervenção proposta em outro atendimento.</p>
         </article>
@@ -960,32 +1046,32 @@
       </div>
       <div class="cards">
         <article class="card">
-          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_consulta_ortopedica.png" alt="" /></span>
+          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_consulta_ortopedica-160.webp" width="160" height="160" alt="" /></span>
           <h3>Consulta ortopédica</h3>
           <p>Avaliação de dor no joelho, ombro, quadril, coluna, tornozelo e demais queixas ortopédicas.</p>
         </article>
         <article class="card">
-          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_ultrassonografia.png" alt="" /></span>
+          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_ultrassonografia-160.webp" width="160" height="160" alt="" /></span>
           <h3>Ultrassonografia musculoesquelética</h3>
           <p>Imagem em tempo real, na própria consulta, para dor articular e de partes moles quando indicada.</p>
         </article>
         <article class="card">
-          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_infiltracoes.png" alt="" /></span>
+          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_infiltracoes-160.webp" width="160" height="160" alt="" /></span>
           <h3>Infiltrações e bloqueios</h3>
           <p>Infiltrações articulares, bloqueios para dor e terapia por ondas de choque, guiadas por ultrassom quando indicado.</p>
         </article>
         <article class="card">
-          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_medicina_regenerativa.png" alt="" /></span>
+          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_medicina_regenerativa-160.webp" width="160" height="160" alt="" /></span>
           <h3>Medicina regenerativa</h3>
           <p>Aplicação de PRP e outros ortobiológicos para articulações e tendões, conforme avaliação clínica.</p>
         </article>
         <article class="card">
-          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_cirurgia_joelho.png" alt="" /></span>
+          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_cirurgia_joelho-160.webp" width="160" height="160" alt="" /></span>
           <h3>Cirurgia do joelho</h3>
           <p>Avaliação para procedimentos cirúrgicos quando há indicação: lesões meniscais, ligamentares, artrose e outras.</p>
         </article>
         <article class="card">
-          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_medicina_esportiva.png" alt="" /></span>
+          <span class="card-icon" aria-hidden="true"><img src="img/3d-icons/icon_medicina_esportiva-160.webp" width="160" height="160" alt="" /></span>
           <h3>Medicina esportiva</h3>
           <p>Avaliação de lesões esportivas, sobrecargas de treino e retorno seguro às atividades.</p>
         </article>
@@ -1023,7 +1109,6 @@
               <span class="cat-label">Atuação</span>
               <ul>
                 <li>Hospital de Base do DF, HBDF.</li>
-                <li>Médico do Esporte no Ceilândia Esporte Clube.</li>
               </ul>
             </div>
           </div>
@@ -1182,7 +1267,7 @@
         <p>Ortopedista e Traumatologista em Brasília.<br>CRM/DF 22900 · RQE 18477 · TEOT 17060.</p>
       </div>
       <div class="footer-addr">
-        <h4>Unidades</h4>
+        <p class="footer-title">Unidades</p>
         <ul>
           <li>Neurospine, Asa Norte, Brasília, DF.</li>
           <li>JK Ortopedia, em frente ao Shopping JK, Taguatinga Norte, Brasília, DF.</li>
@@ -1233,6 +1318,51 @@
     window.addEventListener('load', function() {
       window.scrollTo(0, 0);
     });
+
+    (function() {
+      var consentKey = 'dr_rodrigo_pires_consent_v1';
+      var banner = document.getElementById('consent-banner');
+
+      function setConsent(choice) {
+        var consent = choice === 'all'
+          ? {
+              ad_storage: 'granted',
+              ad_user_data: 'granted',
+              ad_personalization: 'granted',
+              analytics_storage: 'granted',
+              functionality_storage: 'granted',
+              personalization_storage: 'granted',
+              security_storage: 'granted'
+            }
+          : {
+              ad_storage: 'denied',
+              ad_user_data: 'denied',
+              ad_personalization: 'denied',
+              analytics_storage: 'denied',
+              functionality_storage: 'granted',
+              personalization_storage: 'denied',
+              security_storage: 'granted'
+            };
+
+        gtag('consent', 'update', consent);
+        dataLayer.push({ event: 'consent_choice', consent_choice: choice });
+        try { localStorage.setItem(consentKey, JSON.stringify(consent)); } catch (error) {}
+        banner.hidden = true;
+      }
+
+      window.reopenConsent = function() {
+        banner.hidden = false;
+        banner.querySelector('[data-consent-choice="essential"]').focus();
+      };
+
+      try {
+        if (localStorage.getItem(consentKey)) banner.hidden = true;
+      } catch (error) {}
+
+      banner.querySelectorAll('[data-consent-choice]').forEach(function(button) {
+        button.addEventListener('click', function() { setConsent(button.dataset.consentChoice); });
+      });
+    })();
   </script>
 
 </body>

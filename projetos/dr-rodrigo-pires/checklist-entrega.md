@@ -33,7 +33,7 @@ Rodado sobre `previews/dr-rodrigo-pires.html` publicado no GitHub Pages, após i
 - [x] SVGs de icones em 32x32 nativo, otimizados pela Iconify API (color inline).
 - [x] Foto do medico em JPG 683x1024, `loading="eager"` no hero. Foto do consultorio real 400x500 na secao autoridade, `loading="lazy"`.
 - [ ] **Eventos de conversao** — nao aplicavel no preview (sem GTM). Bloqueante para producao.
-- [ ] **Performance com Lighthouse** — nao executado no preview. Bloqueante para producao.
+- [ ] **Performance com Lighthouse** — executado localmente em 2026-08-10. A otimizacao de imagens reduziu o peso total de 11,5 MB para 999 KiB, mas o LCP ainda marcou 3,4 s (meta: abaixo de 2,5 s). Continua bloqueante para producao. Ver `lighthouse-2026-08-10.md`.
 
 ## Spec saude.md
 
@@ -52,7 +52,7 @@ Rodado sobre `previews/dr-rodrigo-pires.html` publicado no GitHub Pages, após i
 - [x] CTA primario unico e visivel no primeiro viewport.
 - [x] **Rodape sem telefone, WhatsApp direto ou canal fora do CTA rastreado.** Nenhum numero exposto em toda a pagina.
 - [x] Todos os CTAs de WhatsApp apontam para `#agendar-bridge` (placeholder). Producao: bridge page real do Pulso (site atual usa `tintim.link/whatsapp/...`, LP nova deve usar bridge propria).
-- [ ] **Consent Mode v2 + GTM** — nao presente no preview. Bloqueante para producao (ver `specs/google-ads.md`).
+- [ ] **Consent Mode v2 + GTM** — container `GTM-P8G6999S`, estado default negado e banner com persistencia instalados. Falta validar as tags e os eventos no ambiente publicado com Tag Assistant; continua bloqueante para producao (ver `specs/google-ads.md`).
 - [x] Preview esta com `noindex, follow` — apropriado para preview no GitHub Pages, deve ser removido em producao.
 
 ## Pendencias registradas em briefing.md (bloqueiam publicacao em Ads)
