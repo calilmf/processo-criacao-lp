@@ -10,17 +10,24 @@ A parte mecânica (tokens, paleta, tipografia, seções, meio do ícone) sai do 
 
 | | Fundo | Acento | Tipografia | Meio do ícone | Metáfora |
 | --- | --- | --- | --- | --- | --- |
-| [Dr. Rodrigo Pires](dr-rodrigo-pires.md) | creme `#f3ebde` | navy `#212e51` + gold `#d4b589` | Montserrat (1 família) | `3d-clay` raster | — |
-| [Dr. Matheus Cavalcanti](dr-matheus-cavalcanti.md) | creme `#f6f4ef` | oliva `#393b23` + areia `#c6b5a3` | General Sans + Cabinet Grotesk + IBM Plex Mono | `flat-mono` (mask-image) | — |
-| [Dra. Genésia Regina](dra-genesia-regina.md) | creme `#fffced` | marrom `#7e552f` + sálvia `#90a570` | Playfair Display + Poppins | `color-emoji` (openmoji) | **árvore da vida** |
+| [Dr. Gustavo Pimpão](dr-gustavo-pimpao.md) | off-white `#f8f4ee` | **vinho `#a01a2a`** | IBM Plex Sans | a inspecionar | — |
+| [Dr. Luiz Sarmanho](dr-luiz-sarmanho.md) | off-white `#f7f4ef` | petróleo `#2f4652` | Manrope | a inspecionar | — |
+| [Dr. Matheus Cavalcanti](dr-matheus-cavalcanti.md) | off-white `#f6f4ef` | oliva `#393b23` + areia `#c6b5a3` | Cabinet Grotesk + IBM Plex Mono | `flat-mono` | — |
+| [Dr. Rodrigo Pires](dr-rodrigo-pires.md) | creme `#f3ebde` | navy `#212e51` + gold `#d4b589` | Montserrat | `3d-clay` raster | — |
+| [Dr. Thiago Cerqueira](dr-thiago-cerqueira.md) | off-white `#f6f7f5` | verde `#6e8f71` + dourado `#b4863f` | Inter | a inspecionar | — |
+| [Dra. Genésia Regina](dra-genesia-regina.md) | creme `#fffdf5` | marrom `#7e552f` + sálvia `#90a570` | Playfair Display + Poppins | `color-emoji` | **árvore da vida** |
+| [Dra. Lara Andrade](dra-lara-andrade.md) | off-white `#f7f4f1` | marrom `#6f5547` + `#a68a7a` | Montserrat | a inspecionar | — |
+| [Rafael Rocha](rafael-rocha.md) | — | azul `#1d4e6b` + ciano `#5bb4d0` | Inter | a inspecionar | — |
 
-## O que isso já diz para a próxima LP
+## O que isso diz para a próxima LP
 
-**Fundo creme está esgotado.** Três de três. A quarta LP em creme claro quente vai parecer irmã das outras independentemente da paleta de acento.
+**O fundo é o problema, não o acento.** Sete das oito têm fundo off-white quente, entre `#f3ebde` e `#fffdf5` — uma faixa estreitíssima. Já os acentos são bem variados (vinho, petróleo, oliva, navy, verde, marrom, azul) e a tipografia também (Montserrat ×2, Inter ×2, IBM Plex Sans, Manrope, Playfair+Poppins, Cabinet Grotesk).
 
-**Os três meios de ícone já usados estão ocupados.** Restam `line-art`, `duotone` e `ilustracao` — e a escolha do meio diferencia mais que a escolha da paleta. Foi o que deu personalidade própria à LP do Rodrigo Pires.
+Ou seja: a sensação de "LP irmã" não vem de repetirmos cor de marca — vem de **todas partilharem a mesma tela de fundo**. É o elemento que ocupa mais área da página e o único que quase não varia. A próxima LP sair do off-white quente resolve mais que qualquer troca de acento.
 
-**Só uma das três tem metáfora condutora declarada — e é a que a agência mais gostou.** A da Genésia (árvore da vida) organiza logo, paleta, ilustração e ritmo de seção ao mesmo tempo. As outras duas têm unidade só por paleta e tipografia, e foi entre elas que apareceu a crítica "está praticamente idêntico ao Dr. Matheus Cavalcanti". A hipótese que este prontuário sustenta: **a metáfora carrega mais diferenciação que a paleta.** Vale tratar como requisito da próxima LP, não como enfeite.
+**Só uma das oito tem metáfora condutora declarada — e é a que a agência mais gostou.** A da Genésia (árvore da vida) organiza logo, paleta, ilustração e ritmo de seção ao mesmo tempo. As outras têm unidade só por paleta e tipografia, e foi entre duas delas que apareceu a crítica "está praticamente idêntico ao Dr. Matheus Cavalcanti". A hipótese que este prontuário sustenta: **a metáfora carrega mais diferenciação que a paleta.** Vale tratar como requisito da próxima LP, não como enfeite.
+
+**Meios de ícone:** três identificados (`flat-mono`, `3d-clay`, `color-emoji`), cinco ainda por inspecionar — a detecção automática cobre só assinaturas conhecidas e falha silenciosamente em stacks novas. Confirmar à mão antes de usar a coluna como veto.
 
 ## Como usar
 

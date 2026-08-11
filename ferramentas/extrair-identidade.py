@@ -100,7 +100,11 @@ def main():
 
     # tokens :root -- quando existem, sao a fonte mais confiavel da identidade
     tokens = []
-    for bloco in re.findall(r":root\s*\{(.*?)\}", todo, re.S):
+    # `:root` costuma vir numa LISTA de seletores (`:root,:host{`, `:root,[data-theme]{`),
+    # entao exigir `{` colado ao `:root` perdia o bloco inteiro em silencio -- foi o
+    # que aconteceu com a LP do Dr. Gustavo Pimpao, que reportou "sem :root declarado"
+    # tendo 40+ tokens.
+    for bloco in re.findall(r":root[^{}]*\{(.*?)\}", todo, re.S):
         # o `;` final e opcional: em CSS minificado a ultima declaracao vem
         # colada no `}` (`--sans:Poppins,Arial,sans-serif}`) e exigir `;`
         # descartava justamente o ultimo token do bloco, em silencio.
