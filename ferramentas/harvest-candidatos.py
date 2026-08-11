@@ -74,7 +74,8 @@ SETS_ESTILIZADOS = {"pixel", "pinhead", "glyphs-poly"}
 # da ordenacao e nunca entravam no corte de candidatos por card.
 PRIORIDADE = [
     "healthicons", "medical-icon", "streamline-ultimate", "streamline",
-    "game-icons", "material-symbols", "hugeicons", "solar", "tabler",
+    "game-icons", "material-symbols", "material-symbols-light", "hugeicons",
+    "solar", "tabler",
     "icon-park-outline", "mingcute", "iconoir", "ph", "mdi", "lucide",
     "carbon", "fluent",
 ]

@@ -10,7 +10,12 @@ Este repo documenta o processo para criar Landing Pages. Se voce foi invocado pa
 3. Identifique o setor e a fonte de trafego. Se existir spec aplicavel em `specs/` (saude, google-ads, ecommerce, etc.), trate como contrato obrigatorio.
 4. Preencha `templates/wireframe-textual.md` antes de escrever copy.
 5. Escreva a copy por secao, usando a estrategia como limite.
-6. Se a pagina usa icones por card (sintomas, causas, cuidados, procedimentos), preencha `templates/mapa-icones.md` seguindo `docs/repertorio-icones.md` — colher candidatos com `ferramentas/harvest-candidatos.py`, gerar contact sheet com `ferramentas/contact-sheet.py`, e escolher **olhando** a 32px. Nenhum icone e aprovado por nome.
+6. Se a pagina usa icones por card (sintomas, causas, cuidados, procedimentos), preencha `templates/mapa-icones.md` seguindo `docs/repertorio-icones.md`. A ordem e:
+   1. `ferramentas/mapear-conceitos.py cards.json especialidades/<esp>/conceitos.md -o mapeamento.json` — casa os cards contra o que ja foi validado em LPs anteriores. **Este e o primeiro passo, sempre.** Pular aqui e a causa documentada de icone errado.
+   2. `ferramentas/harvest-candidatos.py mapeamento.json -o candidatos/ --meio <meio>` — colhe SO o que a base nao resolveu. Recusa `cards.json` cru de proposito.
+   3. `ferramentas/contact-sheet.py candidatos/ --ja-usados mapeamento.json` — renderiza; escolher **olhando** a 32px. Nenhum icone e aprovado por nome.
+   4. `ferramentas/validar-mapa-icones.py projetos/<cliente>/mapa-icones.md` — tem que sair 0 antes de considerar a pagina pronta.
+   Depois da LP aprovada, `ferramentas/promover-conceitos.py` propoe o que devolver para a base (nao escreve; imprime o diff).
 7. Preencha `templates/visual-map.md` antes do layout. Use IDs concretos de `visual-repertorio/` quando existirem; se ainda nao existirem, registre a decisao visual em prosa curta.
 
 ## Ao construir a LP
@@ -39,8 +44,6 @@ Este repo documenta o processo para criar Landing Pages. Se voce foi invocado pa
 - Nao pular gates para acelerar entrega.
 - Nao copiar uma referencia inteira — o repertorio orienta composicao, ritmo, tipografia e densidade; nao clona layout.
 - Nao entregar apenas HTML sem os artefatos de decisao (briefing, wireframe, mapa visual, mapa de icones quando aplicavel, checklist preenchidos).
-- Nao escolher icone pelo nome. Renderizar e olhar a 32px e obrigatorio — `joints-outline` desenha um joelho, `cervical` retorna colo do utero.
-- Nao usar icone de significado generico/fora do setor so porque "da pra entender" (balanca de tribunal pra instabilidade, cadeado de UI pra travamento, relogio/sol pra manha, cursor de clique pra estalo). Card de saude usa pictograma que ilustra a acao/sintoma de verdade — figura humana caindo pra instabilidade, figura deitada na cama pra dor ao dormir, etc. Se a busca so devolve icone de UI/produto pro termo, buscar sinonimo mais concreto antes de aceitar.
-- Nao repetir o mesmo icone dentro da mesma pagina (todos os cards de sintomas + causas daquela pagina, nao so dentro de uma secao). Se dois conceitos sao visualmente parecidos (ex.: duas variacoes de "coluna" ou "disco"), usar variantes de sets diferentes (solido vs contorno, ou sets distintos) — nunca a mesma string de icone duas vezes na mesma pagina.
+- Nao escolher icone pelo nome. Renderizar e olhar a 32px e obrigatorio — `joints-outline` desenha um joelho, `cervical` retorna colo do utero. As demais regras de icone (nao repetir na mesma pagina, nao usar forma abstrata, o que fazer quando nao existe icone literal) estao em `docs/repertorio-icones.md` e sao verificadas por `ferramentas/validar-mapa-icones.py` — nao duplicar aqui.
 - Nao mover regra obrigatoria para dentro de texto de referencia estetica.
 - Nao substituir o token base por preferencia estetica sem justificativa.
