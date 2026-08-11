@@ -57,6 +57,10 @@ Critério, por ícone: *olhando só o desenho, sem ler o título, dá pra dizer 
 
 O 32px é o que decide. Ícone que só funciona grande não serve.
 
+**A base propõe o melhor match, não a escolha final.** `mapear-conceitos.py` devolve o ícone semanticamente mais próximo de cada conceito — e é normal que dois cards da mesma página recebam o mesmo. Quando isso acontece o script avisa (`REPETIDO em 'X'`), e aí a escolha é sua: manter o ícone no card mais central e trocar os outros por alternativas (a própria base costuma ter variantes registradas para a mesma região).
+
+Exemplo real: numa LP de ortopedia a base devolveu `tabler:bandage` para "inchaço", "tendinite patelar" e "bursite" na mesma página. A entrega ficou com bandage no inchaço, `game-icons:knee-bandage` na tendinite e `healthicons:pain-outline` na bursite. Rodar o mapeamento de novo depois mostra "divergência" nesses cards — não é erro, é a regra de página funcionando.
+
 ### 5. Escolher, e checar a página inteira
 
 Sem repetir o mesmo ícone em dois cards da mesma página — nem dentro de uma seção, nem entre seções. Entre páginas diferentes, reuso é permitido.

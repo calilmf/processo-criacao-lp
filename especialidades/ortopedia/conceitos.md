@@ -27,6 +27,14 @@ Formato das colunas é contrato do parser (`ferramentas/conceitos.py`). Mudar no
 | Recorrência / ciclo | `solar:repeat-outline` | recorrente; repetido; crises repetidas; entorses de repetição | dr-thiago-cerqueira |
 | Sinal de alerta | `healthicons:alert-triangle-outline` | sinal de alerta; quando procurar; atenção | dr-thiago-cerqueira |
 | Calçado | `tabler:shoe` | calçado; sapato; palmilha | dr-thiago-cerqueira |
+| Estalos / ruído articular | `solar:bone-crack-outline` | estalos; estalo; crepitação; ruído articular; estalos / travamento articular; estalos ou travamento; estalos no movimento; estalos ao mover os dedos | dr-matheus-cavalcanti |
+| Rigidez matinal ao acordar | `solar:stretching-outline` | rigidez ao acordar; rigidez matinal; travado de manhã | dr-matheus-cavalcanti |
+| Dificuldade para vestir roupa | `tabler:shirt` | vestir roupa; pentear o cabelo; gesto acima da cabeça | dr-matheus-cavalcanti |
+| Rigidez e perda de mobilidade | `mingcute:flexibility-line` | perda de mobilidade; amplitude de movimento; rigidez articular progressiva | dr-matheus-cavalcanti |
+| Dor irradiada para o membro | `healthicons:leg-outline` | dor irradiada; irradia para a perna; irradia para o braço; dor que desce | dr-matheus-cavalcanti |
+| Crise de dor com travamento | `game-icons:back-pain` | crise de dor; crises de travamento; crise de dor com travamento; travamento agudo; episódio de dor intensa | dr-matheus-cavalcanti |
+| Dor ao sentar ou levantar | `material-symbols:chair-outline` | sentar; levantar da cadeira; trocar de posição | dr-matheus-cavalcanti |
+| Instabilidade crônica do tornozelo | `game-icons:foot-trip` | instabilidade crônica; tropeçar; torcer o pé de novo | dr-matheus-cavalcanti |
 
 ## Anatomia (o que o médico explica)
 
@@ -62,7 +70,18 @@ Formato das colunas é contrato do parser (`ferramentas/conceitos.py`). Mudar no
 | Órtese / palmilha | `healthicons:orthotics-outline` | palmilha; órtese; suporte plantar | dr-thiago-cerqueira |
 | Fratura | `lucide:bone-fracture` | fratura; osso quebrado | dr-thiago-cerqueira |
 | Curativo / inflamação | `tabler:bandage` | inflamação; bursite; tendinite; inchaço; edema | dr-thiago-cerqueira |
-| Dor localizada | `healthicons:pain-outline` | dor localizada; dor pontual; dor persistente | dr-thiago-cerqueira; dr-rodrigo-pires |
+| Dor localizada | `healthicons:pain-outline` | dor localizada; dor pontual; dor persistente; bursite | dr-thiago-cerqueira; dr-rodrigo-pires; dr-matheus-cavalcanti |
+| Coluna (variante sólida) | `healthicons:spine` | hérnia de disco; disco intervertebral | dr-matheus-cavalcanti |
+| Canal vertebral estreitado | `game-icons:spinal-coil` | estenose; estreitamento do canal; canal vertebral | dr-matheus-cavalcanti |
+| Vértebra deslocada | `game-icons:spine-arrow` | espondilolistese; deslizamento de vértebra; escorregamento vertebral | dr-matheus-cavalcanti |
+| Bacia / pelve | `game-icons:pelvis-bone` | pelve; bacia; impacto femoroacetabular | dr-matheus-cavalcanti |
+| Músculo em contração | `icon-park-outline:muscle` | tendinopatia; glúteo; músculo contraído | dr-matheus-cavalcanti |
+| Antebraço | `game-icons:forearm` | antebraço; tendinite de flexores; tendinite de extensores | dr-matheus-cavalcanti |
+| Calcanhar / tendão de Aquiles | `game-icons:achilles-heel` | tendão de Aquiles; tendinite do calcanhar | dr-matheus-cavalcanti |
+| Osso longo isolado | `streamline:bone` | esporão; esporão de calcâneo; formação óssea | dr-matheus-cavalcanti |
+| Joelho enfaixado (tendinite) | `game-icons:knee-bandage` | tendinite patelar; joelho enfaixado | dr-thiago-cerqueira; dr-matheus-cavalcanti |
+| Braço imobilizado | `game-icons:arm-sling` | ombro congelado; capsulite adesiva; braço imobilizado | dr-thiago-cerqueira; dr-matheus-cavalcanti |
+| Palmilha ortopédica | `healthicons:orthotics-outline` | fascite plantar; palmilha; suporte plantar | dr-thiago-cerqueira; dr-matheus-cavalcanti |
 
 ## Consulta (serve a qualquer especialidade)
 
@@ -102,6 +121,25 @@ Meios válidos: `flat-mono`, `color-emoji`, `3d-clay`, `line-art`, `duotone`, `i
 | `healthicons:joints-outline` | flat-mono | Articulação em corte — **desenha um joelho**, não usar em página de coluna | Artrose; Desgaste articular |
 | `material-symbols:signpost-outline` | flat-mono | Placa de rua com setas para dois lados | Dúvida de conduta; Segunda opinião |
 | `healthicons:blood-cells-outline` | flat-mono | Três glóbulos agrupados | Medicina regenerativa; PRP |
+| `solar:bone-crack-outline` | flat-mono | Osso com trinca no meio | Estalos ou travamento; Estalos no movimento; Estalos ao mover os dedos |
+| `solar:stretching-outline` | flat-mono | Figura humana se alongando | Rigidez ao acordar |
+| `mingcute:flexibility-line` | flat-mono | Figura em alongamento de flexibilidade | Rigidez e perda de mobilidade |
+| `tabler:shirt` | flat-mono | Camiseta | Dificuldade para vestir roupa |
+| `healthicons:leg-outline` | flat-mono | Perna inteira em contorno | Dor irradiada para braço ou perna |
+| `game-icons:back-pain` | flat-mono | Figura ajoelhada com estouro de dor nas costas | Crises de travamento |
+| `healthicons:spine` | flat-mono | Coluna sólida, vértebras empilhadas | Hérnia de disco |
+| `game-icons:spinal-coil` | flat-mono | Anel espinhal fechado, sugere estreitamento | Estenose do canal vertebral |
+| `game-icons:spine-arrow` | flat-mono | Coluna com seta de deslocamento | Espondilolistese |
+| `material-symbols:chair-outline` | flat-mono | Cadeira em perspectiva | Dor ao sentar ou levantar |
+| `game-icons:pelvis-bone` | flat-mono | Bacia / pelve completa | Impacto femoroacetabular |
+| `icon-park-outline:muscle` | flat-mono | Braço flexionando músculo | Tendinopatia glútea |
+| `game-icons:forearm` | flat-mono | Antebraço com musculatura | Tendinite dos flexores ou extensores |
+| `game-icons:achilles-heel` | flat-mono | Pé com seta apontando o calcanhar | Tendinite do tendão de Aquiles |
+| `game-icons:foot-trip` | flat-mono | Pé tropeçando | Instabilidade crônica |
+| `streamline:bone` | flat-mono | Osso longo isolado | Esporão de calcâneo |
+| `game-icons:knee-bandage` | flat-mono | Joelho enfaixado | Tendinite patelar |
+| `game-icons:arm-sling` | flat-mono | Braço imobilizado em tipoia | Ombro congelado |
+| `healthicons:orthotics-outline` | flat-mono | Pé sobre palmilha ortopédica | Fascite plantar |
 
 ## Sem ícone literal em lugar nenhum
 
