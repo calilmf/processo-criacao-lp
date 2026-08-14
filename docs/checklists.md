@@ -48,7 +48,7 @@ Checklists tornam a revisao repetivel. Eles nao substituem julgamento, mas imped
 - HTML possui estrutura semantica, idioma, viewport e alternativas de texto quando aplicavel.
 - Responsividade e navegacao por teclado foram revisadas.
 - Metadados, indexacao e schema seguem o objetivo da pagina.
-- Se a LP mora em repo proprio do cliente: `scripts/generate-sitemap.mjs` + `.github/workflows/sitemap.yml` estao configurados, com o dominio de producao real (nao o subdominio da Vercel) confirmado por canonical/og:url ao vivo — ver `AGENTS.md` §"Ao construir a LP".
+- Se a LP mora em repo proprio do cliente: `scripts/generate-sitemap.mjs` + `.github/workflows/sitemap.yml` + `sitemap.xsl` estao configurados, com o dominio de producao real (nao o subdominio da Vercel) confirmado por canonical/og:url ao vivo — ver `AGENTS.md` §"Ao construir a LP".
 
 ## Regra de saida
 
