@@ -6,6 +6,7 @@ Este repo documenta o processo para criar Landing Pages. Se voce foi invocado pa
 
 1. Leia `docs/processo-de-criacao.md` inteiro.
 2. Preencha `templates/briefing-lp.md` no arquivo do projeto. Campos sem dado confirmado recebem `[A VALIDAR]`. Nunca invente depoimento, numero, CRM, RQE, preco, prazo ou promessa.
+   - **Campo de convenio nunca fica `[A VALIDAR]` (ou "sem lista") sem checar dois sinais primeiro, na LP atual do cliente inteira (nunca em pedacos):** (1) qualquer mencao da palavra "convenio"/"convenios" na pagina, e (2) qualquer nome de operadora de saude conhecida (ex: GEAP, Unimed, Bacen, Amil). Qualquer um dos dois ja e sinal suficiente pra parar e ler a secao ao redor antes de concluir que nao ha informacao. Ja aconteceu de um agente concluir "sem lista de convenio" numa LP que tinha 46 operadoras listadas, por ler o HTML em pedacos (pulou a secao sem perceber) e confirmar so com grep da palavra "convenio" — que nao aparece dentro de cada item da lista, so o nome de cada operadora.
 3. Identifique o setor e a fonte de trafego. Se existir spec aplicavel em `specs/` (saude, google-ads, ecommerce, etc.), trate como contrato obrigatorio.
 4. Preencha `templates/wireframe-textual.md` antes de escrever copy.
 5. Escreva a copy por secao, usando a estrategia como limite.
